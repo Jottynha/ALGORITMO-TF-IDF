@@ -17,7 +17,7 @@ O projeto inclui a implementação de um sistema que faz a leitura de arquivos d
 
 Para ilustrar o conceito de TF-IDF, a imagem abaixo demonstra visualmente como palavras importantes podem ser extraídas e priorizadas em um documento:
 
-![TF-IDF Visualization](https://miro.medium.com/v2/resize:fit:700/format:webp/1*yyF52bGDoef7YOtx7z9Aeg.jpeg)
+![TF-IDF Visualization](https://www.researchgate.net/publication/376247075/figure/fig2/AS:11431281209841725@1701888441866/TF-IDFTerm-Frequency-Inverse-Document-Frequency.ppm)
 
 ---
 
