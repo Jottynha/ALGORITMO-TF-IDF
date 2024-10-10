@@ -3,10 +3,9 @@
 ## Compilação e Execução
 
  Especificações da máquina em que o código foi rodado:
-  * Processador Intel Core i5, 10th Gen;
-  * Sistema Operacional Windows 10 Home;
-  * Terminal do WSL: Ubuntu 22.04.5;
-  * 16GB de RAM.
+  * Processador Intel Celeron N4020;
+  * Sistema Operacional Ubuntu 22.04.01;
+  * 4 GB de RAM.
 * | Comando                |  Função                                                                                           |                     
   | -----------------------| ------------------------------------------------------------------------------------------------- |
   |  `make clean`          | Apaga a última compilação realizada contida na pasta build.                                       |
