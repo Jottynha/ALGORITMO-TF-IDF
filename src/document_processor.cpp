@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cctype>
+#include <cmath>
 
 using namespace std;
 
@@ -80,4 +81,69 @@ string readFile(const string& filePath) {
     stringstream buffer;
     buffer << file.rdbuf();
     return buffer.str();
+}
+
+// Função para calcular a frequência de termos (TF) em um documento
+unordered_map<string, int> calculateTF(const queue<string>& termQueue) {
+    unordered_map<string, int> tfMap;
+    queue<string> tempQueue = termQueue;
+
+    // Conta a frequência de cada termo no documento
+    while (!tempQueue.empty()) {
+        string term = tempQueue.front();
+        tempQueue.pop();
+        tfMap[term]++;
+    }
+
+    return tfMap;
+}
+
+// Função para calcular o IDF de cada termo considerando todos os documentos
+unordered_map<string, double> calculateIDF(const vector<queue<string>>& termQueues, int numDocs) {
+    unordered_map<string, int> docFrequency;  // df(t)
+    set<string> uniqueTerms;
+    
+    // Contabiliza em quantos documentos cada termo aparece
+    for (const auto& termQueue : termQueues) {
+        uniqueTerms.clear();
+        queue<string> tempQueue = termQueue;
+        
+        while (!tempQueue.empty()) {
+            uniqueTerms.insert(tempQueue.front());
+            tempQueue.pop();
+        }
+
+        // Aumenta o contador de documentos para cada termo único
+        for (const string& term : uniqueTerms) {
+            docFrequency[term]++;
+        }
+    }
+
+    // Calcula o IDF de cada termo
+    unordered_map<string, double> idfMap;
+    for (const auto& entry : docFrequency) {
+        const string& term = entry.first;
+        int df = entry.second;
+        idfMap[term] = log((double)numDocs / (1 + df));  // IDF(t) = log(N / (1 + df(t)))
+    }
+
+    return idfMap;
+}
+
+// Função para calcular o TF-IDF combinando os mapas de TF e IDF
+unordered_map<string, double> calculateTFIDF(const unordered_map<string, int>& tfMap, const unordered_map<string, double>& idfMap) {
+    unordered_map<string, double> tfidfMap;
+
+    // Para cada termo, multiplica TF pelo IDF correspondente
+    for (const auto& entry : tfMap) {
+        const string& term = entry.first;
+        int tf = entry.second;
+
+        if (idfMap.find(term) != idfMap.end()) {
+            double idf = idfMap.at(term);
+            tfidfMap[term] = tf * idf;
+        }
+    }
+
+    return tfidfMap;
 }

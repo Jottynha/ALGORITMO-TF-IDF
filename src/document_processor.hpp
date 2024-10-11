@@ -4,10 +4,16 @@
 #include <queue>
 #include <string>
 #include <set>
+#include <unordered_map>
+#include <vector>
 
 using namespace std;
 
 extern set<string> stopWords;
+
+unordered_map<string, int> calculateTF(const queue<string>& termQueue);
+unordered_map<string, double> calculateIDF(const vector<queue<string>>& termQueues, int numDocs);
+unordered_map<string, double> calculateTFIDF(const unordered_map<string, int>& tfMap, const unordered_map<string, double>& idfMap);
 
 // Função para remover pontuação
 string removePunctuation(const string& word);
