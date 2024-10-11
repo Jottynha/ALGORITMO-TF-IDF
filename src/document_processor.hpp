@@ -7,6 +7,12 @@
 #include <unordered_map>
 #include <vector>
 #include <unordered_set>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
+#include <cctype>
+#include <cmath>
 
 using namespace std;
 
@@ -53,5 +59,11 @@ vector<DocumentoRelevancia> calcularEOrdenarRelevancia(
 int partition(vector<DocumentoRelevancia>& relevancias, int low, int high);
 // Implementação do QuickSort
 void quickSort(vector<DocumentoRelevancia>& relevancias, int low, int high);
+
+void searchTermInDocuments(const vector<queue<string>>& termQueues);
+void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfMaps, const string& pesquisaFile);
+vector<queue<string>> processDocuments(const vector<string>& documentPaths);void writeTermsToFile(const vector<queue<string>>& termQueues, const vector<string>& documentPaths, const string& outputFile);
+void writeTermsToFile(const vector<queue<string>>& termQueues, const vector<string>& documentPaths, const string& outputFile);
+vector<unordered_map<string, double>> calculateTFIDF(const vector<queue<string>>& termQueues, const vector<string>& documentPaths);
 
 #endif // DOCUMENT_PROCESSOR_HPP

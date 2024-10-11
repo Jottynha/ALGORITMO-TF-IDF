@@ -1,11 +1,4 @@
 #include "document_processor.hpp"
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <iostream>
-#include <cctype>
-#include <cmath>
-#include <unordered_set>
 
 using namespace std;
 
@@ -205,5 +198,115 @@ void quickSort(vector<DocumentoRelevancia>& relevancias, int low, int high) {
         int pi = partition(relevancias, low, high);
         quickSort(relevancias, low, pi - 1);
         quickSort(relevancias, pi + 1, high);
+    }
+}
+
+// Função para processar documentos e armazenar termos em filas
+vector<queue<string>> processDocuments(const vector<string>& documentPaths) {
+    vector<queue<string>> termQueues;
+    
+    for (const string& path : documentPaths) {
+        string content = readFile(path);
+        if (!content.empty()) {
+            queue<string> terms = processDocument(content);
+            termQueues.push_back(terms);
+        }
+    }
+    
+    return termQueues;
+}
+
+// Função para escrever termos normalizados em um arquivo de saída
+void writeTermsToFile(const vector<queue<string>>& termQueues, const vector<string>& documentPaths, const string& outputFile) {
+    ofstream outFile(outputFile);
+    if (!outFile.is_open()) {
+        cerr << "Erro ao abrir o arquivo de saída: " << outputFile << endl;
+        return;
+    }
+
+    for (size_t i = 0; i < documentPaths.size(); ++i) {
+        outFile << "Termos normalizados do documento " << i + 1 << ":" << endl;
+        queue<string> tempQueue = termQueues[i];
+
+        while (!tempQueue.empty()) {
+            outFile << tempQueue.front() << endl;
+            tempQueue.pop();
+        }
+        outFile << endl;  // Adiciona uma nova linha entre documentos
+    }
+
+    outFile.close();
+}
+
+// Função para calcular TF, IDF e TF-IDF
+vector<unordered_map<string, double>> calculateTFIDF(const vector<queue<string>>& termQueues, const vector<string>& documentPaths) {
+    vector<unordered_map<string, int>> tfMaps;
+    
+    for (const auto& terms : termQueues) {
+        tfMaps.push_back(calculateTF(terms));
+    }
+
+    unordered_map<string, double> idfMap = calculateIDF(termQueues, documentPaths.size());
+
+    vector<unordered_map<string, double>> tfidfMaps;
+    for (const auto& tfMap : tfMaps) {
+        tfidfMaps.push_back(calculateTFIDF(tfMap, idfMap));
+    }
+
+    return tfidfMaps;
+}
+
+// Função para pesquisar e exibir resultados
+void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfMaps, const string& pesquisaFile) {
+    ifstream pesquisaFileStream(pesquisaFile);
+    string pesquisaLinha;
+    
+    while (getline(pesquisaFileStream, pesquisaLinha)) {
+        queue<string> queryTerms = processDocument(pesquisaLinha);
+        
+        vector<DocumentoRelevancia> relevancias = calcularEOrdenarRelevancia(tfidfMaps, queryTerms);
+        
+        quickSort(relevancias, 0, relevancias.size() - 1);
+
+        cout << "Resultados para a pesquisa: \"" << pesquisaLinha << "\"" << endl;
+        for (const auto& docRelevancia : relevancias) {
+            cout << "Documento ID: " << docRelevancia.docID << ", Relevância: " << docRelevancia.relevancia << endl;
+        }
+        cout << endl;
+    }
+
+    pesquisaFileStream.close();
+}
+
+// Função para executar a pesquisa de termos
+void searchTermInDocuments(const vector<queue<string>>& termQueues) {
+    string searchTerm;
+    cout << "Digite um termo para pesquisar (ou 'sair' para encerrar): ";
+    
+    while (getline(cin, searchTerm)) {
+        if (searchTerm == "sair") {
+            break;
+        }
+
+        cout << "Resultados da pesquisa para o termo: '" << searchTerm << "':" << endl;
+        bool found = false;
+
+        for (size_t i = 0; i < termQueues.size(); ++i) {
+            queue<string> tempQueue = termQueues[i];
+            while (!tempQueue.empty()) {
+                if (tempQueue.front() == searchTerm) {
+                    cout << "O termo foi encontrado no documento " << i + 1 << endl;
+                    found = true;
+                    break;  // Para buscar apenas no primeiro documento encontrado
+                }
+                tempQueue.pop();
+            }
+            if (found) break;  // Sai do loop externo se encontrado
+        }
+
+        if (!found) {
+            cout << "O termo '" << searchTerm << "' não foi encontrado em nenhum documento." << endl;
+        }
+        cout << "Digite um termo para pesquisar (ou 'sair' para encerrar): ";
     }
 }
