@@ -6,10 +6,22 @@
 #include <set>
 #include <unordered_map>
 #include <vector>
+#include <unordered_set>
 
 using namespace std;
 
-extern set<string> stopWords;
+extern unordered_set<string> stopWords;
+
+// Estrutura para armazenar a relevância dos documentos
+struct DocumentoRelevancia {
+    int docID;     // ID do documento
+    double relevancia;  // Relevância do documento
+
+    // Operador para facilitar a comparação durante a ordenação
+    bool operator<(const DocumentoRelevancia& other) const {
+        return relevancia > other.relevancia;  // Maior relevância primeiro
+    }
+};
 
 unordered_map<string, int> calculateTF(const queue<string>& termQueue);
 unordered_map<string, double> calculateIDF(const vector<queue<string>>& termQueues, int numDocs);
@@ -22,7 +34,7 @@ string removePunctuation(const string& word);
 string toLowerCase(const string& word);
 
 // Função para carregar stopwords de um arquivo
-set<string> loadStopWords(const string& stopWordsFile);
+unordered_set<string> loadStopWords(const string& stopWordsFile);
 
 // Função para verificar se uma palavra é stop word
 bool isStopWord(const string& word);
@@ -32,5 +44,14 @@ queue<string> processDocument(const string& documentContent);
 
 // Função para ler um arquivo de texto
 string readFile(const string& filePath);
+
+vector<DocumentoRelevancia> calcularEOrdenarRelevancia(
+    const vector<unordered_map<string, double>>& documentosTFIDF,
+    const queue<string>& queryTerms);
+
+// Função de particionamento para o QuickSort
+int partition(vector<DocumentoRelevancia>& relevancias, int low, int high);
+// Implementação do QuickSort
+void quickSort(vector<DocumentoRelevancia>& relevancias, int low, int high);
 
 #endif // DOCUMENT_PROCESSOR_HPP

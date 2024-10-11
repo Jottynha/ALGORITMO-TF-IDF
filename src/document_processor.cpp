@@ -5,10 +5,11 @@
 #include <iostream>
 #include <cctype>
 #include <cmath>
+#include <unordered_set>
 
 using namespace std;
 
-set<string> stopWords;  // Stopwords serão carregadas do arquivo
+unordered_set<string> stopWords;  // Stopwords serão carregadas do arquivo
 
 // Função para remover pontuação
 string removePunctuation(const string& word) {
@@ -29,8 +30,8 @@ string toLowerCase(const string& word) {
 }
 
 // Função para carregar stopwords de um arquivo
-set<string> loadStopWords(const string& stopWordsFile) {
-    set<string> stopWords;
+unordered_set<string> loadStopWords(const string& stopWordsFile) {
+    unordered_set<string> stopWords; // Alterado para unordered_set
     ifstream file(stopWordsFile);
     string word;
 
@@ -39,7 +40,7 @@ set<string> loadStopWords(const string& stopWordsFile) {
         return stopWords;
     }
 
-    // Lê cada stopword e insere no set
+    // Lê cada stopword e insere no unordered_set
     while (file >> word) {
         stopWords.insert(word);
     }
@@ -146,4 +147,63 @@ unordered_map<string, double> calculateTFIDF(const unordered_map<string, int>& t
     }
 
     return tfidfMap;
+}
+
+// Função para calcular a relevância de cada documento em relação à frase de pesquisa
+double calcularRelevancia(const unordered_map<string, double>& tfidf, const queue<string>& queryTerms) {
+    double relevancia = 0.0;
+    queue<string> tempQueue = queryTerms;
+
+    while (!tempQueue.empty()) {
+        string term = tempQueue.front();
+        tempQueue.pop();
+        if (tfidf.find(term) != tfidf.end()) {
+            relevancia += tfidf.at(term);
+        }
+    }
+
+    return relevancia;
+}
+
+// Função para calcular a relevância de todos os documentos e ordená-los
+vector<DocumentoRelevancia> calcularEOrdenarRelevancia(
+    const vector<unordered_map<string, double>>& documentosTFIDF,
+    const queue<string>& queryTerms) {
+
+    vector<DocumentoRelevancia> relevancias;
+
+    // Calcula a relevância de cada documento
+    for (size_t i = 0; i < documentosTFIDF.size(); ++i) {
+        double relevancia = calcularRelevancia(documentosTFIDF[i], queryTerms);
+        relevancias.push_back({static_cast<int>(i + 1), relevancia});
+    }
+
+    // Ordena os documentos com base na relevância
+    sort(relevancias.begin(), relevancias.end());
+
+    return relevancias;
+}
+
+// Função de particionamento para o QuickSort
+int partition(vector<DocumentoRelevancia>& relevancias, int low, int high) {
+    double pivot = relevancias[high].relevancia;
+    int i = (low - 1);
+    
+    for (int j = low; j < high; j++) {
+        if (relevancias[j].relevancia > pivot) { // Ordenando de forma decrescente
+            i++;
+            swap(relevancias[i], relevancias[j]);
+        }
+    }
+    swap(relevancias[i + 1], relevancias[high]);
+    return (i + 1);
+}
+
+// Implementação do QuickSort
+void quickSort(vector<DocumentoRelevancia>& relevancias, int low, int high) {
+    if (low < high) {
+        int pi = partition(relevancias, low, high);
+        quickSort(relevancias, low, pi - 1);
+        quickSort(relevancias, pi + 1, high);
+    }
 }
