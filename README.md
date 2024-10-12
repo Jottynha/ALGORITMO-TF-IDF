@@ -2,6 +2,8 @@
 
 ## Introdução 📝
 
+![TF-IDF](https://miro.medium.com/v2/resize:fit:720/format:webp/1*V9ac4hLVyms79jl65Ym_Bw.jpeg)
+
 Este projeto tem como objetivo processar documentos de texto para normalizar os termos, remover stopwords e calcular a relevância de cada palavra em relação ao documento, utilizando o algoritmo TF-IDF (Term Frequency - Inverse Document Frequency). O TF-IDF é uma técnica amplamente utilizada em mineração de texto e recuperação de informação, capaz de destacar os termos mais significativos de um conjunto de documentos.
 
 O algoritmo TF-IDF funciona em duas etapas principais:
