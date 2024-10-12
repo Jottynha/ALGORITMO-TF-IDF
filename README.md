@@ -44,6 +44,42 @@ Esses objetivos visam não apenas o cumprimento das exigências do trabalho, mas
   
 ---
 
+## Estruturas de Dados Escolhidas
+
+Neste projeto, foram escolhidas as seguintes estruturas de dados:
+
+- **Tabelas Hash**: Utilizadas para armazenar os termos extraídos dos documentos e suas frequências. As tabelas hash oferecem operações de inserção e busca com complexidade O(1) em média, tornando-as adequadas para o armazenamento rápido de termos e a consulta de frequências.
+
+- **Filas**: As filas foram utilizadas para armazenar os termos de cada documento durante o processamento. Elas permitem a inserção e remoção de elementos de forma eficiente, com complexidade O(1). No entanto, o acesso direto a elementos intermediários não é possível.
+
+### Comparação com Alternativas
+
+- **Listas**: Embora as listas possam ser utilizadas para armazenar termos, elas apresentam complexidade O(n) para operações de busca e inserção, o que pode ser ineficiente em grandes conjuntos de dados. A escolha de tabelas hash, portanto, justifica-se pela eficiência.
+
+- **Árvores**: Estruturas de árvores (como BST ou AVL) poderiam ser consideradas, especialmente para manter a ordem dos termos e permitir buscas eficientes. No entanto, para o propósito específico de armazenamento de termos e cálculo de TF-IDF, as tabelas hash se mostraram mais adequadas devido à simplicidade e rapidez das operações.
+
+## Descrição das Operações Implementadas
+
+As principais operações implementadas no sistema incluem:
+
+1. **Carregar Stopwords**:
+   - **Descrição**: Lê um arquivo de stopwords e armazena os termos em uma tabela hash.
+   - **Complexidade**: O(n), onde n é o número de stopwords.
+
+2. **Processar Documentos**:
+   - **Descrição**: Lê documentos e extrai termos, armazenando-os em filas.
+   - **Complexidade**: O(m), onde m é o número total de palavras nos documentos.
+
+3. **Calcular TF-IDF**:
+   - **Descrição**: Calcula o valor TF-IDF para cada termo em cada documento.
+   - **Complexidade**: O(d * t), onde d é o número de documentos e t é o número de termos.
+
+4. **Pesquisar Resultados**:
+   - **Descrição**: Lê frases de pesquisa e compara com os documentos, exibindo resultados ordenados.
+   - **Complexidade**: O(d log d) para a ordenação dos resultados.
+
+---
+
 ## Descrição
 
 O **document_processor.cpp/hpp** é um programa que lê documentos de texto, processa seu conteúdo para extrair termos relevantes, e calcula a relevância de documentos em relação a uma consulta de pesquisa. O processamento inclui a remoção de stopwords, normalização de palavras, e cálculo de métricas de frequência de termos (TF), frequência inversa de documentos (IDF) e TF-IDF.
