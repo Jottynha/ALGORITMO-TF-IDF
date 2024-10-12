@@ -1,6 +1,6 @@
 <div align="center">
    
-# Processamento de Texto e Extração de Palavras Relevantes usando TF-IDF
+# Processamento de Texto e Extração de Palavras Relevantes usando TF-IDF ⚙️
 
 </div>
 
@@ -41,14 +41,6 @@ O objetivo deste trabalho é desenvolver um sistema de ranqueamento de documento
 4. **Desenvolvimento de Habilidades Práticas**: Proporcionar uma oportunidade para os alunos aplicarem teorias de algoritmos e estruturas de dados em um projeto prático, promovendo um entendimento mais profundo sobre o funcionamento e a eficiência das diferentes estruturas de dados em aplicações reais.
 
 Esses objetivos visam não apenas o cumprimento das exigências do trabalho, mas também um aprendizado significativo que prepara os alunos para desafios futuros na área de Ciência da Computação.
-
-  
-### Tecnologias Utilizadas
-
-- C++
-- Algoritmo TF-IDF
-- Estruturas de dados para leitura e armazenamento de termos
-- Manipulação de arquivos de texto
   
 ---
 
