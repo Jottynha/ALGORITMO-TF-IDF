@@ -1,6 +1,6 @@
 # Processamento de Texto e Extração de Palavras Relevantes usando TF-IDF
 
-## Introdução
+## Introdução 📝
 
 Este projeto tem como objetivo processar documentos de texto para normalizar os termos, remover stopwords e calcular a relevância de cada palavra em relação ao documento, utilizando o algoritmo TF-IDF (Term Frequency - Inverse Document Frequency). O TF-IDF é uma técnica amplamente utilizada em mineração de texto e recuperação de informação, capaz de destacar os termos mais significativos de um conjunto de documentos.
 
@@ -14,6 +14,7 @@ Ao combinar essas duas métricas, o TF-IDF ajuda a identificar palavras que são
 O projeto inclui a implementação de um sistema que faz a leitura de arquivos de texto, remove a pontuação, normaliza o texto para minúsculas e remove palavras irrelevantes usando uma lista de stopwords. Após o pré-processamento, o sistema é capaz de calcular os valores TF-IDF para cada termo, oferecendo uma visão clara dos termos mais relevantes em cada documento.
 
 ---
+
 ## Objetivos 🎯
 O objetivo deste trabalho é desenvolver um sistema de ranqueamento de documentos utilizando o algoritmo TF/IDF (Term Frequency-Inverse Document Frequency). Os objetivos específicos incluem:
 
@@ -46,7 +47,7 @@ Esses objetivos visam não apenas o cumprimento das exigências do trabalho, mas
 
 O **document_processor.cpp/hpp** é um programa que lê documentos de texto, processa seu conteúdo para extrair termos relevantes, e calcula a relevância de documentos em relação a uma consulta de pesquisa. O processamento inclui a remoção de stopwords, normalização de palavras, e cálculo de métricas de frequência de termos (TF), frequência inversa de documentos (IDF) e TF-IDF.
 
-## Estruturas de Dados Utilizadas
+### Estruturas de Dados Utilizadas
 
 O programa utiliza as seguintes estruturas de dados:
 
