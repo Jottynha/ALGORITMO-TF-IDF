@@ -14,8 +14,7 @@ Ao combinar essas duas métricas, o TF-IDF ajuda a identificar palavras que são
 O projeto inclui a implementação de um sistema que faz a leitura de arquivos de texto, remove a pontuação, normaliza o texto para minúsculas e remove palavras irrelevantes usando uma lista de stopwords. Após o pré-processamento, o sistema é capaz de calcular os valores TF-IDF para cada termo, oferecendo uma visão clara dos termos mais relevantes em cada documento.
 
 ---
-### Objetivos
-
+## Objetivos 🎯
 O objetivo deste trabalho é desenvolver um sistema de ranqueamento de documentos utilizando o algoritmo TF/IDF (Term Frequency-Inverse Document Frequency). Os objetivos específicos incluem:
 
 1. **Implementação do Algoritmo TF/IDF**: Construir um sistema que calcule a relevância de documentos em relação a uma consulta de pesquisa, aplicando o algoritmo TF/IDF para ranquear os documentos de forma eficaz.
