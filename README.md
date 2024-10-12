@@ -86,17 +86,29 @@ O funcionamento do programa pode ser resumido nas seguintes etapas:
 6. **Resultados**:
    - Os resultados da pesquisa são exibidos, mostrando a relevância de cada documento em relação à consulta.
 
+---
+
 ## Dificuldades de Implementação
 
-Ao implementar o algoritmo, algumas dificuldades podem ser encontradas:
+Ao implementar o algoritmo de ranqueamento de documentos, algumas dificuldades podem ser encontradas:
 
-1. **Gerenciamento de Stopwords**: A correta identificação e carregamento das stopwords pode ser desafiador, especialmente se o arquivo de stopwords não estiver no formato esperado.
+1. **Gerenciamento de Stopwords**: 
+   A correta identificação e carregamento das stopwords pode ser desafiador, especialmente se o arquivo de stopwords não estiver no formato esperado. Um arquivo mal formatado pode causar falhas na leitura e no processamento, resultando em erros que afetam a relevância dos termos extraídos. Para mitigar isso, a implementação de uma estrutura de dados mais robusta, como uma árvore, poderia ajudar na organização e na rápida verificação da existência de stopwords.
 
-2. **Processamento de Documentos**: O tratamento de diferentes formatos de documentos (como PDFs ou arquivos de texto com codificações distintas) pode exigir adaptações no código.
+2. **Processamento de Documentos**: 
+   O tratamento de diferentes formatos de documentos, como PDFs ou arquivos de texto com codificações distintas, pode exigir adaptações no código. Isso pode ser complicado devido à variedade de bibliotecas necessárias para ler cada formato. Uma abordagem que utilize grafos poderia representar documentos como vértices e suas relações como arestas, facilitando a manipulação e a conversão entre diferentes formatos. Além disso, a utilização de uma estrutura de árvore poderia organizar os termos de cada documento hierarquicamente, facilitando o acesso e a busca.
 
-3. **Cálculo de TF-IDF**: A implementação eficiente do cálculo de TF-IDF em grandes conjuntos de dados pode resultar em um consumo elevado de memória e tempo de processamento.
+3. **Cálculo de TF-IDF**: 
+   A implementação eficiente do cálculo de TF-IDF em grandes conjuntos de dados pode resultar em um consumo elevado de memória e tempo de processamento. A utilização de tabelas hash para armazenar termos e seus respectivos contadores é uma abordagem comum, mas pode ser otimizada. Estruturas de árvore, como Árvores AVL, poderiam ser utilizadas para manter os termos em uma ordem balanceada, permitindo inserções e buscas com complexidade O(log n). Isso não só melhoraria a eficiência do cálculo como também reduziria o uso de memória em comparação com uma lista desordenada.
 
-4. **Ordenação de Resultados**: A ordenação dos documentos com base em sua relevância pode ser complexa se não houver uma estrutura de dados adequada.
+4. **Ordenação de Resultados**: 
+   A ordenação dos documentos com base em sua relevância pode ser complexa se não houver uma estrutura de dados adequada. Métodos tradicionais de ordenação, como QuickSort, têm uma complexidade O(n log n), que é aceitável, mas a implementação de uma estrutura de dados como uma árvore binária de busca (BST) ou uma árvore balanceada (como AVL) poderia facilitar a inserção dos documentos de maneira ordenada à medida que são processados. Isso não apenas reduziria o custo de ordenação, mas também permitiria consultas mais rápidas para determinar a relevância de novos documentos à medida que eles são adicionados ao sistema.
+
+### Considerações sobre Estruturas de Dados
+
+A utilização de estruturas de árvore e grafo poderia melhorar significativamente a eficiência e a escalabilidade do sistema de ranqueamento de documentos. Enquanto as estruturas de dados básicas, como listas e tabelas hash, fornecem uma base funcional, elas apresentam limitações em cenários de grandes volumes de dados e operações complexas. Estruturas mais avançadas permitem não apenas a organização eficiente dos dados, mas também uma implementação mais intuitiva dos algoritmos de busca e ranqueamento, preparando o terreno para a exploração de conceitos mais avançados, como aprendizado de máquina e análise de redes.
+
+---
 
 ## Conclusão
 
