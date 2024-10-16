@@ -158,9 +158,16 @@ Documento ID: 5, Relevância: 0.654
 Documento ID: 1, Relevância: 0.432
 ```
 
-Nesse formato, a frase pesquisada é exibida junto com os IDs dos documentos e suas respectivas relevâncias, facilitando a análise da relevância dos documentos para cada consulta.
+Nesse formato, a frase pesquisada é exibida junto com os IDs dos documentos e suas respectivas relevâncias, facilitando a análise da relevância dos documentos para cada consulta. A imagem abaixo mostra as frases selecionadas baseadas nas palavras com maior relevância de cada documento.
+<div align="center">
+![Imagem de Entrada](./fig/entrada.png)
+</div>
 
-![Diagrama do Sistema](./fig/entrada.png)
+Os resultados obtidos respectivamente desta entrada de frases foi:
+<div align="center">
+![Imagem de Saida (1)](./fig/saida1.png)
+![Imagem de Saida (2)](./fig/saida2.png)
+</div>
 
 ## Considerações Finais
 
