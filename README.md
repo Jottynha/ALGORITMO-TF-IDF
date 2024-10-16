@@ -140,9 +140,35 @@ Ao implementar o algoritmo de ranqueamento de documentos, algumas dificuldades p
 4. **Ordenação de Resultados**: 
    A ordenação dos documentos com base em sua relevância pode ser complexa se não houver uma estrutura de dados adequada. Métodos tradicionais de ordenação, como QuickSort, têm uma complexidade O(n log n), que é aceitável, mas a implementação de uma estrutura de dados como uma árvore binária de busca (BST) ou uma árvore balanceada (como AVL) poderia facilitar a inserção dos documentos de maneira ordenada à medida que são processados. Isso não apenas reduziria o custo de ordenação, mas também permitiria consultas mais rápidas para determinar a relevância de novos documentos à medida que eles são adicionados ao sistema.
 
-### Considerações sobre Estruturas de Dados
+## Considerações sobre Estruturas de Dados
 
 A utilização de estruturas de árvore e grafo poderia melhorar significativamente a eficiência e a escalabilidade do sistema de ranqueamento de documentos. Enquanto as estruturas de dados básicas, como listas e tabelas hash, fornecem uma base funcional, elas apresentam limitações em cenários de grandes volumes de dados e operações complexas. Estruturas mais avançadas permitem não apenas a organização eficiente dos dados, mas também uma implementação mais intuitiva dos algoritmos de busca e ranqueamento, preparando o terreno para a exploração de conceitos mais avançados, como aprendizado de máquina e análise de redes.
+
+---
+
+## Resumo dos Resultados
+
+Para cada frase de pesquisa, o algoritmo gera um resumo contendo os documentos ordenados por relevância e a frase correspondente. O seguinte exemplo ilustra o formato dos resultados:
+
+```
+Resumo para a frase: "exemplo de frase de busca"
+A relevância desta pesquisa por documentos ordenados é:
+Documento ID: 3, Relevância: 0.785
+Documento ID: 5, Relevância: 0.654
+Documento ID: 1, Relevância: 0.432
+```
+
+Nesse formato, a frase pesquisada é exibida junto com os IDs dos documentos e suas respectivas relevâncias, facilitando a análise da relevância dos documentos para cada consulta.
+
+![Diagrama do Sistema](./fig/entrada.png)
+
+## Considerações Finais
+
+Essa implementação oferece uma maneira eficiente de medir a relevância dos documentos para determinadas frases de pesquisa, auxiliando na priorização dos documentos mais relevantes. Além disso, os detalhes fornecidos no arquivo de saída sobre os termos e seus pesos **TF-IDF** por documento permitem uma análise aprofundada da distribuição dos termos.
+
+---
+
+Esse texto pode ser ajustado de acordo com as particularidades do seu projeto, mas fornece uma base sólida para descrever a funcionalidade e os resultados obtidos.
 
 ---
 
