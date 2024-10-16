@@ -183,20 +183,17 @@ Ao aplicar o algoritmo **TF-IDF** a documentos tão distintos como os **livros d
 
 Quando o TF-IDF é aplicado, as palavras que melhor diferenciam os documentos são aquelas mais raras em uma coleção global, mas frequentes em um único texto. Assim, o algoritmo destaca o quão únicos os termos são para cada tipo de documento.
 
-## Considerações Finais
-
-Essa implementação oferece uma maneira eficiente de medir a relevância dos documentos para determinadas frases de pesquisa, auxiliando na priorização dos documentos mais relevantes. Além disso, os detalhes fornecidos no arquivo de saída sobre os termos e seus pesos **TF-IDF** por documento permitem uma análise aprofundada da distribuição dos termos.
-
----
-
-Esse texto pode ser ajustado de acordo com as particularidades do seu projeto, mas fornece uma base sólida para descrever a funcionalidade e os resultados obtidos.
-
----
-
 ## Conclusão
 
-O **Document Processor** oferece uma solução eficaz para processar documentos de texto e calcular sua relevância em relação a consultas de pesquisa, utilizando técnicas clássicas de recuperação de informações. As estruturas de dados escolhidas garantem eficiência e rapidez no processamento.
+O desenvolvimento deste projeto, que envolveu a implementação de um código em C++ utilizando as técnicas de TF-IDF e Quick Sort, proporcionou uma experiência enriquecedora no campo da análise textual e recuperação de informações. O objetivo principal foi avaliar a relevância de frases extraídas de textos significativos, como a Bíblia e obras de Machado de Assis, utilizando uma abordagem quantitativa e sistemática.
 
+A técnica de TF-IDF foi essencial para medir a importância relativa de termos em relação a documentos distintos, permitindo que o sistema destacasse palavras-chave e frases que possuíam maior relevância para o contexto dos textos analisados. Essa métrica se mostrou particularmente eficaz em identificar as nuances presentes nas obras literárias, contribuindo para uma compreensão mais profunda das intenções dos autores e dos temas abordados.
+
+Além disso, a utilização do algoritmo Quick Sort permitiu uma ordenação eficiente das frases com base nas suas pontuações de relevância, facilitando a apresentação dos resultados de forma clara e acessível. A combinação dessa técnica com estruturas de dados, como tabelas hash e listas, otimizou o armazenamento e a recuperação de palavras e termos, garantindo uma manipulação ágil e eficaz dos dados durante todo o processo.
+
+Os resultados obtidos evidenciaram a capacidade do sistema em identificar frases relevantes de maneira precisa e rápida, destacando a importância das escolhas estruturais e algorítmicas no sucesso do projeto. O uso de tabelas hash proporcionou um acesso eficiente às informações, enquanto as listas possibilitaram uma organização flexível dos dados analisados.
+
+Este trabalho não apenas demonstrou a aplicação prática de conceitos de ciência da computação, como análise de dados e algoritmos de ordenação, mas também destacou a relevância da literatura na formação de um repertório cultural mais rico. A integração de métodos computacionais com textos clássicos ilustra o potencial da tecnologia na exploração e apreciação da literatura, abrindo portas para futuras pesquisas e aplicações na área de processamento de linguagem natural.
 
 ---
  
