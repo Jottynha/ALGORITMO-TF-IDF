@@ -246,7 +246,6 @@ vector<unordered_map<string, double>> calculateTFIDF(const vector<queue<string>>
     return tfidfMaps;
 }
 
-// Função para pesquisar e exibir resultados com TF, IDF e TF-IDF
 void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfMaps, 
                              const unordered_map<string, double>& idfMap, 
                              const vector<unordered_map<string, int>>& tfMaps, 
@@ -260,6 +259,9 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
         cerr << "Erro ao abrir output.txt" << endl;
         return;
     }
+
+    // Armazena todas as palavras relevantes
+    unordered_map<string, double> relevanciasGlobais;
 
     while (getline(pesquisaFileStream, pesquisaLinha)) {
         queue<string> queryTerms = processDocument(pesquisaLinha);
@@ -284,10 +286,13 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
                 string term = tempQueue.front();
                 tempQueue.pop();
 
-                // Imprime apenas TF-IDF no terminal
+                // Adiciona TF-IDF globalmente
                 if (tfidfMap.find(term) != tfidfMap.end()) {
                     double tfidf = tfidfMap.at(term);
                     cout << "TF-IDF para o termo '" << term << "' no Documento ID: " << docID << " é: " << tfidf << endl;
+                    
+                    // Adiciona a relevância ao total
+                    relevanciasGlobais[term] += tfidf;
                 }
             }
 
@@ -311,8 +316,28 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
                     outputFile << "  Termo: '" << term << "' não encontrado no documento." << endl;
                 }
             }
+
+            // Imprimir as 5 palavras mais relevantes para o documento
+            vector<pair<string, double>> termosRelevantes(tfidfMap.begin(), tfidfMap.end());
+            sort(termosRelevantes.begin(), termosRelevantes.end(), 
+                 [](const auto& a, const auto& b) { return a.second > b.second; });
+            
+            outputFile << "  5 termos mais relevantes no Documento ID " << docID << ":" << endl;
+            for (long unsigned int i = 0; i < 5 && i < termosRelevantes.size(); ++i) {
+                outputFile << "    Termo: '" << termosRelevantes[i].first << "', Relevância: " << termosRelevantes[i].second << endl;
+            }
         }
         outputFile << endl;
+    }
+
+    // Imprimir as 5 palavras mais relevantes de todos os documentos
+    vector<pair<string, double>> termosGlobais(relevanciasGlobais.begin(), relevanciasGlobais.end());
+    sort(termosGlobais.begin(), termosGlobais.end(), 
+         [](const auto& a, const auto& b) { return a.second > b.second; });
+
+    outputFile << "5 termos mais relevantes em todos os documentos:" << endl;
+    for (long unsigned int i = 0; i < 5 && i < termosGlobais.size(); ++i) {
+        outputFile << "  Termo: '" << termosGlobais[i].first << "', Relevância: " << termosGlobais[i].second << endl;
     }
 
     pesquisaFileStream.close();
