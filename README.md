@@ -127,6 +127,18 @@ Este código é uma implementação de um processador de documentos que realiza 
 4. **Relevância**: Quando uma consulta é fornecida, o código calcula a relevância de cada documento com base nos termos da consulta e suas pontuações de TF-IDF.
 5. **Ordenação e Saída**: Os resultados são ordenados e salvos em um arquivo, juntamente com detalhes sobre a frequência dos termos e a relevância dos documentos em relação à consulta.
 
+Segue abaixo imagens do arquivo `document_processor.hpp` e `main.cpp`:
+
+<div align="center">
+   
+![Imagem de Document_Processor.hpp](./fig/hpp.png)
+
+![Imagem de Main.cpp](./fig/main.png)
+
+</div>
+
+
+
 ---
 
 ## Dificuldades de Implementação
