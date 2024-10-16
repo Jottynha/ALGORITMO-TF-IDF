@@ -17,6 +17,8 @@
 using namespace std;
 
 extern unordered_set<string> stopWords;
+extern unordered_map<string, double> idfMap;
+extern vector<unordered_map<string, int>> tfMaps;
 
 // Estrutura para armazenar a relevância dos documentos
 struct DocumentoRelevancia {
@@ -61,7 +63,7 @@ int partition(vector<DocumentoRelevancia>& relevancias, int low, int high);
 void quickSort(vector<DocumentoRelevancia>& relevancias, int low, int high);
 
 void searchTermInDocuments(const vector<queue<string>>& termQueues);
-void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfMaps, const string& pesquisaFile);
+void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfMaps, const unordered_map<string, double>& idfMap, const vector<unordered_map<string, int>>& tfMaps, const string& pesquisaFile);
 vector<queue<string>> processDocuments(const vector<string>& documentPaths);void writeTermsToFile(const vector<queue<string>>& termQueues, const vector<string>& documentPaths, const string& outputFile);
 void writeTermsToFile(const vector<queue<string>>& termQueues, const vector<string>& documentPaths, const string& outputFile);
 vector<unordered_map<string, double>> calculateTFIDF(const vector<queue<string>>& termQueues, const vector<string>& documentPaths);

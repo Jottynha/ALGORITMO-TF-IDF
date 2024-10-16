@@ -2,9 +2,10 @@
 
 using namespace std;
 
-unordered_set<string> stopWords;  // Stopwords serão carregadas do arquivo
+unordered_set<string> stopWords;
+unordered_map<string, double> idfMap;  
+vector<unordered_map<string, int>> tfMaps; 
 
-// Função para remover pontuação
 string removePunctuation(const string& word) {
     string cleanWord;
     for (char c : word) {
@@ -15,16 +16,14 @@ string removePunctuation(const string& word) {
     return cleanWord;
 }
 
-// Função para converter string para minúsculas
 string toLowerCase(const string& word) {
     string lowerWord = word;
     transform(lowerWord.begin(), lowerWord.end(), lowerWord.begin(), ::tolower);
     return lowerWord;
 }
 
-// Função para carregar stopwords de um arquivo
 unordered_set<string> loadStopWords(const string& stopWordsFile) {
-    unordered_set<string> stopWords; // Alterado para unordered_set
+    unordered_set<string> stopWords;
     ifstream file(stopWordsFile);
     string word;
 
@@ -42,7 +41,6 @@ unordered_set<string> loadStopWords(const string& stopWordsFile) {
     return stopWords;
 }
 
-// Função para verificar se uma palavra é stop word
 bool isStopWord(const string& word) {
     return stopWords.find(word) != stopWords.end();
 }
@@ -54,8 +52,8 @@ queue<string> processDocument(const string& documentContent) {
     string word;
 
     while (ss >> word) {
-        word = removePunctuation(word);  // Remove pontuação
-        word = toLowerCase(word);        // Converte para minúsculas
+        word = removePunctuation(word);  
+        word = toLowerCase(word);        
         if (!isStopWord(word) && !word.empty()) {
             terms.push(word);            // Adiciona o termo à fila se não for stop word
         }
@@ -64,14 +62,12 @@ queue<string> processDocument(const string& documentContent) {
     return terms;
 }
 
-// Função para ler um arquivo de texto
 string readFile(const string& filePath) {
     ifstream file(filePath);
     if (!file.is_open()) {
         cerr << "Erro ao abrir o arquivo: " << filePath << endl;
         return "";
     }
-
     stringstream buffer;
     buffer << file.rdbuf();
     return buffer.str();
@@ -81,48 +77,42 @@ string readFile(const string& filePath) {
 unordered_map<string, int> calculateTF(const queue<string>& termQueue) {
     unordered_map<string, int> tfMap;
     queue<string> tempQueue = termQueue;
-
-    // Conta a frequência de cada termo no documento
     while (!tempQueue.empty()) {
         string term = tempQueue.front();
         tempQueue.pop();
         tfMap[term]++;
     }
-
     return tfMap;
 }
 
-// Função para calcular o IDF de cada termo considerando todos os documentos
 unordered_map<string, double> calculateIDF(const vector<queue<string>>& termQueues, int numDocs) {
     unordered_map<string, int> docFrequency;  // df(t)
-    set<string> uniqueTerms;
     
-    // Contabiliza em quantos documentos cada termo aparece
     for (const auto& termQueue : termQueues) {
-        uniqueTerms.clear();
+        set<string> uniqueTerms;
         queue<string> tempQueue = termQueue;
-        
+
         while (!tempQueue.empty()) {
             uniqueTerms.insert(tempQueue.front());
             tempQueue.pop();
         }
 
-        // Aumenta o contador de documentos para cada termo único
         for (const string& term : uniqueTerms) {
             docFrequency[term]++;
         }
     }
 
-    // Calcula o IDF de cada termo
     unordered_map<string, double> idfMap;
     for (const auto& entry : docFrequency) {
         const string& term = entry.first;
         int df = entry.second;
-        idfMap[term] = log((double)numDocs / (1 + df));  // IDF(t) = log(N / (1 + df(t)))
+        // Consider using max to avoid zero division
+        idfMap[term] = log(static_cast<double>(numDocs) / max(1, df));
     }
 
     return idfMap;
 }
+
 
 // Função para calcular o TF-IDF combinando os mapas de TF e IDF
 unordered_map<string, double> calculateTFIDF(const unordered_map<string, int>& tfMap, const unordered_map<string, double>& idfMap) {
@@ -256,11 +246,21 @@ vector<unordered_map<string, double>> calculateTFIDF(const vector<queue<string>>
     return tfidfMaps;
 }
 
-// Função para pesquisar e exibir resultados
-void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfMaps, const string& pesquisaFile) {
+// Função para pesquisar e exibir resultados com TF, IDF e TF-IDF
+void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfMaps, 
+                             const unordered_map<string, double>& idfMap, 
+                             const vector<unordered_map<string, int>>& tfMaps, 
+                             const string& pesquisaFile) {
     ifstream pesquisaFileStream(pesquisaFile);
     string pesquisaLinha;
     
+    // Abre o arquivo de saída
+    ofstream outputFile("output.txt");
+    if (!outputFile.is_open()) {
+        cerr << "Erro ao abrir output.txt" << endl;
+        return;
+    }
+
     while (getline(pesquisaFileStream, pesquisaLinha)) {
         queue<string> queryTerms = processDocument(pesquisaLinha);
         
@@ -268,14 +268,55 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
         
         quickSort(relevancias, 0, relevancias.size() - 1);
 
-        cout << "Resultados para a pesquisa: \"" << pesquisaLinha << "\"" << endl;
+        // Salva os resultados da pesquisa no arquivo
+        outputFile << "Resultados para a pesquisa: \"" << pesquisaLinha << "\"" << endl;
         for (const auto& docRelevancia : relevancias) {
-            cout << "Documento ID: " << docRelevancia.docID << ", Relevância: " << docRelevancia.relevancia << endl;
+            int docID = docRelevancia.docID;
+            outputFile << "Documento ID: " << docID << ", Relevância: " << docRelevancia.relevancia << endl;
+
+            // Recupera o TF e TF-IDF do documento atual
+            const auto& tfMap = tfMaps[docID - 1];
+            const auto& tfidfMap = tfidfMaps[docID - 1];
+
+            // Exibe TF-IDF de cada termo da consulta no documento
+            queue<string> tempQueue = queryTerms;
+            while (!tempQueue.empty()) {
+                string term = tempQueue.front();
+                tempQueue.pop();
+
+                // Imprime apenas TF-IDF no terminal
+                if (tfidfMap.find(term) != tfidfMap.end()) {
+                    double tfidf = tfidfMap.at(term);
+                    cout << "TF-IDF para o termo '" << term << "' no Documento ID: " << docID << " é: " << tfidf << endl;
+                }
+            }
+
+            // Escreve informações detalhadas no arquivo
+            queue<string> tempQueueDetails = queryTerms; // Para manter a original
+            while (!tempQueueDetails.empty()) {
+                string term = tempQueueDetails.front();
+                tempQueueDetails.pop();
+
+                // Imprime valores de TF, IDF e TF-IDF no arquivo
+                if (tfMap.find(term) != tfMap.end() && idfMap.find(term) != idfMap.end()) {
+                    int tf = tfMap.at(term);
+                    double idf = idfMap.at(term);
+                    double tfidf = tfidfMap.at(term);
+                    
+                    outputFile << "  Termo: '" << term << "'" << endl;
+                    outputFile << "    TF: " << tf << endl;
+                    outputFile << "    IDF: " << idf << endl;
+                    outputFile << "    TF-IDF: " << tfidf << endl;
+                } else {
+                    outputFile << "  Termo: '" << term << "' não encontrado no documento." << endl;
+                }
+            }
         }
-        cout << endl;
+        outputFile << endl;
     }
 
     pesquisaFileStream.close();
+    outputFile.close(); // Fecha o arquivo de saída
 }
 
 // Função para executar a pesquisa de termos
