@@ -171,6 +171,7 @@ Os resultados obtidos respectivamente desta entrada de frases foi:
 <div align="center">
    
 ![Imagem de Saida (1)](./fig/saida1.png)
+
 ![Imagem de Saida (2)](./fig/saida2.png)
 
 </div>
@@ -210,7 +211,6 @@ Este trabalho não apenas demonstrou a aplicação prática de conceitos de ciê
   |  `make run`            | Executa o programa da pasta build após a realização da compilação.                                |
 
 ---
-Esse README oferece uma visão geral da evolução do algoritmo, as bibliotecas utilizadas e o código relevante, proporcionando uma base clara para entender e utilizar o projeto.
 
 ## Integrantes:
 
