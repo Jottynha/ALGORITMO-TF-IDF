@@ -159,15 +159,29 @@ Documento ID: 1, Relevância: 0.432
 ```
 
 Nesse formato, a frase pesquisada é exibida junto com os IDs dos documentos e suas respectivas relevâncias, facilitando a análise da relevância dos documentos para cada consulta. A imagem abaixo mostra as frases selecionadas baseadas nas palavras com maior relevância de cada documento.
+
 <div align="center">
+   
 ![Imagem de Entrada](./fig/entrada.png)
+
 </div>
 
 Os resultados obtidos respectivamente desta entrada de frases foi:
+
 <div align="center">
+   
 ![Imagem de Saida (1)](./fig/saida1.png)
 ![Imagem de Saida (2)](./fig/saida2.png)
+
 </div>
+
+Ao aplicar o algoritmo **TF-IDF** a documentos tão distintos como os **livros de Machado de Assis**, a **Bíblia**, e um **livro sobre terremotos**, o resultado reflete as diferenças entre os conteúdos com base na frequência e relevância das palavras em cada contexto.
+
+- **TF (Term Frequency)** mede a frequência de uma palavra em um documento. Em um livro de Machado de Assis, termos literários e filosóficos aparecem frequentemente. Na Bíblia, termos religiosos, como "fé" e "Deus", são muito recorrentes, enquanto em um livro sobre terremotos, termos técnicos como "falha", "placa tectônica" e "sismologia" são dominantes.
+  
+- **IDF (Inverse Document Frequency)** diminui o peso de palavras comuns que aparecem em todos os documentos, como "o", "de", "e". Palavras específicas a cada tipo de texto terão maior peso na relevância. Por exemplo, "ressurreição" terá alta relevância na Bíblia, mas não em um livro científico.
+
+Quando o TF-IDF é aplicado, as palavras que melhor diferenciam os documentos são aquelas mais raras em uma coleção global, mas frequentes em um único texto. Assim, o algoritmo destaca o quão únicos os termos são para cada tipo de documento.
 
 ## Considerações Finais
 
