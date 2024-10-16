@@ -1,17 +1,468 @@
-Resultados para a pesquisa: "jeová"
-Documento ID: 2, Relevância: 27.4653
-  Termo: 'jeová'
-    TF: 25
+
+==================================================
+Resultados para a pesquisa: "guiomar estevão é um bom homem"
+Documento ID: 2, Relevância: 1010.07
+  Termo: 'guiomar' não encontrado no documento.
+  Termo: 'estevão'
+    TF: 1
     IDF: 1.09861
-    TF-IDF: 27.4653
+    TF-IDF: 1.09861
+  Termo: 'é'
+    TF: 3714
+    IDF: 0.182322
+    TF-IDF: 677.142
+  Termo: 'bom'
+    TF: 212
+    IDF: 0.182322
+    TF-IDF: 38.6522
+  Termo: 'homem'
+    TF: 1608
+    IDF: 0.182322
+    TF-IDF: 293.173
   5 termos mais relevantes no Documento ID 2:
     Termo: 'ele', Relevância: 2672.08
     Termo: '9', Relevância: 2098.15
     Termo: '10', Relevância: 2067.69
     Termo: '12', Relevância: 1983.48
     Termo: '13', Relevância: 1935.1
-Documento ID: 3, Relevância: 1.09861
-  Termo: 'jeová'
+Documento ID: 5, Relevância: 785.441
+  Termo: 'guiomar' não encontrado no documento.
+  Termo: 'estevão' não encontrado no documento.
+  Termo: 'é'
+    TF: 3720
+    IDF: 0.182322
+    TF-IDF: 678.236
+  Termo: 'bom'
+    TF: 117
+    IDF: 0.182322
+    TF-IDF: 21.3316
+  Termo: 'homem'
+    TF: 471
+    IDF: 0.182322
+    TF-IDF: 85.8735
+  5 termos mais relevantes no Documento ID 5:
+    Termo: '—', Relevância: 1987.06
+    Termo: 'não', Relevância: 1000.76
+    Termo: 'há', Relevância: 845.64
+    Termo: 'é', Relevância: 678.236
+    Termo: 'coisa', Relevância: 417.473
+Documento ID: 1, Relevância: 739.221
+  Termo: 'guiomar'
+    TF: 283
+    IDF: 1.79176
+    TF-IDF: 507.068
+  Termo: 'estevão'
+    TF: 168
+    IDF: 1.09861
+    TF-IDF: 184.567
+  Termo: 'é'
+    TF: 192
+    IDF: 0.182322
+    TF-IDF: 35.0057
+  Termo: 'bom'
+    TF: 20
+    IDF: 0.182322
+    TF-IDF: 3.64643
+  Termo: 'homem'
+    TF: 49
+    IDF: 0.182322
+    TF-IDF: 8.93376
+  5 termos mais relevantes no Documento ID 1:
+    Termo: 'guiomar', Relevância: 507.068
+    Termo: 'ella', Relevância: 228.511
+    Termo: 'elle', Relevância: 204.342
+    Termo: 'baroneza', Relevância: 184.567
+    Termo: 'estevão', Relevância: 184.567
+Documento ID: 4, Relevância: 142.758
+  Termo: 'guiomar' não encontrado no documento.
+  Termo: 'estevão' não encontrado no documento.
+  Termo: 'é'
+    TF: 573
+    IDF: 0.182322
+    TF-IDF: 104.47
+  Termo: 'bom'
+    TF: 70
+    IDF: 0.182322
+    TF-IDF: 12.7625
+  Termo: 'homem'
+    TF: 140
+    IDF: 0.182322
+    TF-IDF: 25.525
+  5 termos mais relevantes no Documento ID 4:
+    Termo: 'rubião', Relevância: 1247.06
+    Termo: 'sophia', Relevância: 603.823
+    Termo: 'elle', Relevância: 464.713
+    Termo: 'não', Relevância: 273.665
+    Termo: 'ella', Relevância: 236.202
+Documento ID: 3, Relevância: 138.2
+  Termo: 'guiomar' não encontrado no documento.
+  Termo: 'estevão' não encontrado no documento.
+  Termo: 'é'
+    TF: 657
+    IDF: 0.182322
+    TF-IDF: 119.785
+  Termo: 'bom'
+    TF: 35
+    IDF: 0.182322
+    TF-IDF: 6.38125
+  Termo: 'homem'
+    TF: 66
+    IDF: 0.182322
+    TF-IDF: 12.0332
+  5 termos mais relevantes no Documento ID 3:
+    Termo: 'capitu', Relevância: 603.823
+    Termo: 'não', Relevância: 277.129
+    Termo: 'capÍtulo', Relevância: 265.18
+    Termo: 'escobar', Relevância: 197.094
+    Termo: 'ele', Relevância: 165.662
+Documento ID: 6, Relevância: 0
+  Termo: 'guiomar' não encontrado no documento.
+  Termo: 'estevão' não encontrado no documento.
+  Termo: 'é' não encontrado no documento.
+  Termo: 'bom' não encontrado no documento.
+  Termo: 'homem' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 6:
+    Termo: 'hum', Relevância: 37.6269
+    Termo: 'naõ', Relevância: 17.9176
+    Termo: 'huma', Relevância: 14.3341
+    Termo: 'valença', Relevância: 12.5423
+    Termo: 'saõ', Relevância: 12.5423
+
+Resumo: A relevância desta pesquisa por documentos ordenados é:
+Documento ID: 2, Relevância: 1010.07
+Documento ID: 5, Relevância: 785.441
+Documento ID: 1, Relevância: 739.221
+Documento ID: 4, Relevância: 142.758
+Documento ID: 3, Relevância: 138.2
+Documento ID: 6, Relevância: 0
+
+==================================================
+
+==================================================
+Resultados para a pesquisa: "ele tem de 9 a 10 amigos"
+Documento ID: 2, Relevância: 6847.4
+  Termo: 'ele'
+    TF: 3855
+    IDF: 0.693147
+    TF-IDF: 2672.08
+  Termo: 'tem'
+    TF: 597
+    IDF: 0
+    TF-IDF: 0
+  Termo: '9'
+    TF: 1171
+    IDF: 1.79176
+    TF-IDF: 2098.15
+  Termo: '10'
+    TF: 1154
+    IDF: 1.79176
+    TF-IDF: 2067.69
+  Termo: 'amigos'
+    TF: 52
+    IDF: 0.182322
+    TF-IDF: 9.48072
+  5 termos mais relevantes no Documento ID 2:
+    Termo: 'ele', Relevância: 2672.08
+    Termo: '9', Relevância: 2098.15
+    Termo: '10', Relevância: 2067.69
+    Termo: '12', Relevância: 1983.48
+    Termo: '13', Relevância: 1935.1
+Documento ID: 5, Relevância: 355.686
+  Termo: 'ele'
+    TF: 490
+    IDF: 0.693147
+    TF-IDF: 339.642
+  Termo: 'tem'
+    TF: 351
+    IDF: 0
+    TF-IDF: 0
+  Termo: '9' não encontrado no documento.
+  Termo: '10' não encontrado no documento.
+  Termo: 'amigos'
+    TF: 88
+    IDF: 0.182322
+    TF-IDF: 16.0443
+  5 termos mais relevantes no Documento ID 5:
+    Termo: '—', Relevância: 1987.06
+    Termo: 'não', Relevância: 1000.76
+    Termo: 'há', Relevância: 845.64
+    Termo: 'é', Relevância: 678.236
+    Termo: 'coisa', Relevância: 417.473
+Documento ID: 3, Relevância: 169.491
+  Termo: 'ele'
+    TF: 239
+    IDF: 0.693147
+    TF-IDF: 165.662
+  Termo: 'tem'
+    TF: 63
+    IDF: 0
+    TF-IDF: 0
+  Termo: '9' não encontrado no documento.
+  Termo: '10' não encontrado no documento.
+  Termo: 'amigos'
+    TF: 21
+    IDF: 0.182322
+    TF-IDF: 3.82875
+  5 termos mais relevantes no Documento ID 3:
+    Termo: 'capitu', Relevância: 603.823
+    Termo: 'não', Relevância: 277.129
+    Termo: 'capÍtulo', Relevância: 265.18
+    Termo: 'escobar', Relevância: 197.094
+    Termo: 'ele', Relevância: 165.662
+Documento ID: 4, Relevância: 6.19893
+  Termo: 'ele' não encontrado no documento.
+  Termo: 'tem'
+    TF: 79
+    IDF: 0
+    TF-IDF: 0
+  Termo: '9' não encontrado no documento.
+  Termo: '10' não encontrado no documento.
+  Termo: 'amigos'
+    TF: 34
+    IDF: 0.182322
+    TF-IDF: 6.19893
+  5 termos mais relevantes no Documento ID 4:
+    Termo: 'rubião', Relevância: 1247.06
+    Termo: 'sophia', Relevância: 603.823
+    Termo: 'elle', Relevância: 464.713
+    Termo: 'não', Relevância: 273.665
+    Termo: 'ella', Relevância: 236.202
+Documento ID: 1, Relevância: 0.911608
+  Termo: 'ele' não encontrado no documento.
+  Termo: 'tem'
+    TF: 30
+    IDF: 0
+    TF-IDF: 0
+  Termo: '9' não encontrado no documento.
+  Termo: '10' não encontrado no documento.
+  Termo: 'amigos'
+    TF: 5
+    IDF: 0.182322
+    TF-IDF: 0.911608
+  5 termos mais relevantes no Documento ID 1:
+    Termo: 'guiomar', Relevância: 507.068
+    Termo: 'ella', Relevância: 228.511
+    Termo: 'elle', Relevância: 204.342
+    Termo: 'baroneza', Relevância: 184.567
+    Termo: 'estevão', Relevância: 184.567
+Documento ID: 6, Relevância: 0
+  Termo: 'ele' não encontrado no documento.
+  Termo: 'tem'
+    TF: 5
+    IDF: 0
+    TF-IDF: 0
+  Termo: '9' não encontrado no documento.
+  Termo: '10' não encontrado no documento.
+  Termo: 'amigos' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 6:
+    Termo: 'hum', Relevância: 37.6269
+    Termo: 'naõ', Relevância: 17.9176
+    Termo: 'huma', Relevância: 14.3341
+    Termo: 'valença', Relevância: 12.5423
+    Termo: 'saõ', Relevância: 12.5423
+
+Resumo: A relevância desta pesquisa por documentos ordenados é:
+Documento ID: 2, Relevância: 6847.4
+Documento ID: 5, Relevância: 355.686
+Documento ID: 3, Relevância: 169.491
+Documento ID: 4, Relevância: 6.19893
+Documento ID: 1, Relevância: 0.911608
+Documento ID: 6, Relevância: 0
+
+==================================================
+
+==================================================
+Resultados para a pesquisa: "capitu não tem o capÌtulo"
+Documento ID: 2, Relevância: 1497.95
+  Termo: 'capitu' não encontrado no documento.
+  Termo: 'não'
+    TF: 8216
+    IDF: 0.182322
+    TF-IDF: 1497.95
+  Termo: 'tem'
+    TF: 597
+    IDF: 0
+    TF-IDF: 0
+  Termo: 'capÌtulo' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 2:
+    Termo: 'ele', Relevância: 2672.08
+    Termo: '9', Relevância: 2098.15
+    Termo: '10', Relevância: 2067.69
+    Termo: '12', Relevância: 1983.48
+    Termo: '13', Relevância: 1935.1
+Documento ID: 5, Relevância: 1000.76
+  Termo: 'capitu' não encontrado no documento.
+  Termo: 'não'
+    TF: 5489
+    IDF: 0.182322
+    TF-IDF: 1000.76
+  Termo: 'tem'
+    TF: 351
+    IDF: 0
+    TF-IDF: 0
+  Termo: 'capÌtulo' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 5:
+    Termo: '—', Relevância: 1987.06
+    Termo: 'não', Relevância: 1000.76
+    Termo: 'há', Relevância: 845.64
+    Termo: 'é', Relevância: 678.236
+    Termo: 'coisa', Relevância: 417.473
+Documento ID: 3, Relevância: 880.952
+  Termo: 'capitu'
+    TF: 337
+    IDF: 1.79176
+    TF-IDF: 603.823
+  Termo: 'não'
+    TF: 1520
+    IDF: 0.182322
+    TF-IDF: 277.129
+  Termo: 'tem'
+    TF: 63
+    IDF: 0
+    TF-IDF: 0
+  Termo: 'capÌtulo' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 3:
+    Termo: 'capitu', Relevância: 603.823
+    Termo: 'não', Relevância: 277.129
+    Termo: 'capÍtulo', Relevância: 265.18
+    Termo: 'escobar', Relevância: 197.094
+    Termo: 'ele', Relevância: 165.662
+Documento ID: 4, Relevância: 273.665
+  Termo: 'capitu' não encontrado no documento.
+  Termo: 'não'
+    TF: 1501
+    IDF: 0.182322
+    TF-IDF: 273.665
+  Termo: 'tem'
+    TF: 79
+    IDF: 0
+    TF-IDF: 0
+  Termo: 'capÌtulo' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 4:
+    Termo: 'rubião', Relevância: 1247.06
+    Termo: 'sophia', Relevância: 603.823
+    Termo: 'elle', Relevância: 464.713
+    Termo: 'não', Relevância: 273.665
+    Termo: 'ella', Relevância: 236.202
+Documento ID: 1, Relevância: 117.05
+  Termo: 'capitu' não encontrado no documento.
+  Termo: 'não'
+    TF: 642
+    IDF: 0.182322
+    TF-IDF: 117.05
+  Termo: 'tem'
+    TF: 30
+    IDF: 0
+    TF-IDF: 0
+  Termo: 'capÌtulo' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 1:
+    Termo: 'guiomar', Relevância: 507.068
+    Termo: 'ella', Relevância: 228.511
+    Termo: 'elle', Relevância: 204.342
+    Termo: 'baroneza', Relevância: 184.567
+    Termo: 'estevão', Relevância: 184.567
+Documento ID: 6, Relevância: 0
+  Termo: 'capitu' não encontrado no documento.
+  Termo: 'não' não encontrado no documento.
+  Termo: 'tem'
+    TF: 5
+    IDF: 0
+    TF-IDF: 0
+  Termo: 'capÌtulo' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 6:
+    Termo: 'hum', Relevância: 37.6269
+    Termo: 'naõ', Relevância: 17.9176
+    Termo: 'huma', Relevância: 14.3341
+    Termo: 'valença', Relevância: 12.5423
+    Termo: 'saõ', Relevância: 12.5423
+
+Resumo: A relevância desta pesquisa por documentos ordenados é:
+Documento ID: 2, Relevância: 1497.95
+Documento ID: 5, Relevância: 1000.76
+Documento ID: 3, Relevância: 880.952
+Documento ID: 4, Relevância: 273.665
+Documento ID: 1, Relevância: 117.05
+Documento ID: 6, Relevância: 0
+
+==================================================
+
+==================================================
+Resultados para a pesquisa: "rubião e sophia não são colegas"
+Documento ID: 4, Relevância: 2135.67
+  Termo: 'rubião'
+    TF: 696
+    IDF: 1.79176
+    TF-IDF: 1247.06
+  Termo: 'sophia'
+    TF: 337
+    IDF: 1.79176
+    TF-IDF: 603.823
+  Termo: 'não'
+    TF: 1501
+    IDF: 0.182322
+    TF-IDF: 273.665
+  Termo: 'são'
+    TF: 61
+    IDF: 0.182322
+    TF-IDF: 11.1216
+  Termo: 'colegas' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 4:
+    Termo: 'rubião', Relevância: 1247.06
+    Termo: 'sophia', Relevância: 603.823
+    Termo: 'elle', Relevância: 464.713
+    Termo: 'não', Relevância: 273.665
+    Termo: 'ella', Relevância: 236.202
+Documento ID: 2, Relevância: 1699.6
+  Termo: 'rubião' não encontrado no documento.
+  Termo: 'sophia' não encontrado no documento.
+  Termo: 'não'
+    TF: 8216
+    IDF: 0.182322
+    TF-IDF: 1497.95
+  Termo: 'são'
+    TF: 1106
+    IDF: 0.182322
+    TF-IDF: 201.648
+  Termo: 'colegas' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 2:
+    Termo: 'ele', Relevância: 2672.08
+    Termo: '9', Relevância: 2098.15
+    Termo: '10', Relevância: 2067.69
+    Termo: '12', Relevância: 1983.48
+    Termo: '13', Relevância: 1935.1
+Documento ID: 5, Relevância: 1140.85
+  Termo: 'rubião' não encontrado no documento.
+  Termo: 'sophia' não encontrado no documento.
+  Termo: 'não'
+    TF: 5489
+    IDF: 0.182322
+    TF-IDF: 1000.76
+  Termo: 'são'
+    TF: 690
+    IDF: 0.182322
+    TF-IDF: 125.802
+  Termo: 'colegas'
+    TF: 13
+    IDF: 1.09861
+    TF-IDF: 14.282
+  5 termos mais relevantes no Documento ID 5:
+    Termo: '—', Relevância: 1987.06
+    Termo: 'não', Relevância: 1000.76
+    Termo: 'há', Relevância: 845.64
+    Termo: 'é', Relevância: 678.236
+    Termo: 'coisa', Relevância: 417.473
+Documento ID: 3, Relevância: 291.355
+  Termo: 'rubião' não encontrado no documento.
+  Termo: 'sophia' não encontrado no documento.
+  Termo: 'não'
+    TF: 1520
+    IDF: 0.182322
+    TF-IDF: 277.129
+  Termo: 'são'
+    TF: 72
+    IDF: 0.182322
+    TF-IDF: 13.1272
+  Termo: 'colegas'
     TF: 1
     IDF: 1.09861
     TF-IDF: 1.09861
@@ -21,39 +472,175 @@ Documento ID: 3, Relevância: 1.09861
     Termo: 'capÍtulo', Relevância: 265.18
     Termo: 'escobar', Relevância: 197.094
     Termo: 'ele', Relevância: 165.662
-Documento ID: 6, Relevância: 0
-  Termo: 'jeová' não encontrado no documento.
-  5 termos mais relevantes no Documento ID 6:
-    Termo: 'hum', Relevância: 37.6269
-    Termo: 'naõ', Relevância: 17.9176
-    Termo: 'huma', Relevância: 14.3341
-    Termo: 'valença', Relevância: 12.5423
-    Termo: 'saõ', Relevância: 12.5423
-Documento ID: 1, Relevância: 0
-  Termo: 'jeová' não encontrado no documento.
+Documento ID: 1, Relevância: 121.608
+  Termo: 'rubião' não encontrado no documento.
+  Termo: 'sophia' não encontrado no documento.
+  Termo: 'não'
+    TF: 642
+    IDF: 0.182322
+    TF-IDF: 117.05
+  Termo: 'são'
+    TF: 25
+    IDF: 0.182322
+    TF-IDF: 4.55804
+  Termo: 'colegas' não encontrado no documento.
   5 termos mais relevantes no Documento ID 1:
     Termo: 'guiomar', Relevância: 507.068
     Termo: 'ella', Relevância: 228.511
     Termo: 'elle', Relevância: 204.342
     Termo: 'baroneza', Relevância: 184.567
     Termo: 'estevão', Relevância: 184.567
-Documento ID: 4, Relevância: 0
-  Termo: 'jeová' não encontrado no documento.
-  5 termos mais relevantes no Documento ID 4:
-    Termo: 'rubião', Relevância: 1247.06
-    Termo: 'sophia', Relevância: 603.823
-    Termo: 'elle', Relevância: 464.713
-    Termo: 'não', Relevância: 273.665
-    Termo: 'ella', Relevância: 236.202
-Documento ID: 5, Relevância: 0
-  Termo: 'jeová' não encontrado no documento.
+Documento ID: 6, Relevância: 0
+  Termo: 'rubião' não encontrado no documento.
+  Termo: 'sophia' não encontrado no documento.
+  Termo: 'não' não encontrado no documento.
+  Termo: 'são' não encontrado no documento.
+  Termo: 'colegas' não encontrado no documento.
+  5 termos mais relevantes no Documento ID 6:
+    Termo: 'hum', Relevância: 37.6269
+    Termo: 'naõ', Relevância: 17.9176
+    Termo: 'huma', Relevância: 14.3341
+    Termo: 'valença', Relevância: 12.5423
+    Termo: 'saõ', Relevância: 12.5423
+
+Resumo: A relevância desta pesquisa por documentos ordenados é:
+Documento ID: 4, Relevância: 2135.67
+Documento ID: 2, Relevância: 1699.6
+Documento ID: 5, Relevância: 1140.85
+Documento ID: 3, Relevância: 291.355
+Documento ID: 1, Relevância: 121.608
+Documento ID: 6, Relevância: 0
+
+==================================================
+
+==================================================
+Resultados para a pesquisa: "não há coisa melhor"
+Documento ID: 2, Relevância: 2526.35
+  Termo: 'não'
+    TF: 8216
+    IDF: 0.182322
+    TF-IDF: 1497.95
+  Termo: 'há'
+    TF: 921
+    IDF: 0.693147
+    TF-IDF: 638.389
+  Termo: 'coisa'
+    TF: 355
+    IDF: 1.09861
+    TF-IDF: 390.007
+  Termo: 'melhor'
+    TF: 131
+    IDF: 0
+    TF-IDF: 0
+  5 termos mais relevantes no Documento ID 2:
+    Termo: 'ele', Relevância: 2672.08
+    Termo: '9', Relevância: 2098.15
+    Termo: '10', Relevância: 2067.69
+    Termo: '12', Relevância: 1983.48
+    Termo: '13', Relevância: 1935.1
+Documento ID: 5, Relevância: 2263.88
+  Termo: 'não'
+    TF: 5489
+    IDF: 0.182322
+    TF-IDF: 1000.76
+  Termo: 'há'
+    TF: 1220
+    IDF: 0.693147
+    TF-IDF: 845.64
+  Termo: 'coisa'
+    TF: 380
+    IDF: 1.09861
+    TF-IDF: 417.473
+  Termo: 'melhor'
+    TF: 215
+    IDF: 0
+    TF-IDF: 0
   5 termos mais relevantes no Documento ID 5:
     Termo: '—', Relevância: 1987.06
     Termo: 'não', Relevância: 1000.76
     Termo: 'há', Relevância: 845.64
     Termo: 'é', Relevância: 678.236
     Termo: 'coisa', Relevância: 417.473
+Documento ID: 3, Relevância: 381.794
+  Termo: 'não'
+    TF: 1520
+    IDF: 0.182322
+    TF-IDF: 277.129
+  Termo: 'há'
+    TF: 151
+    IDF: 0.693147
+    TF-IDF: 104.665
+  Termo: 'coisa' não encontrado no documento.
+  Termo: 'melhor'
+    TF: 84
+    IDF: 0
+    TF-IDF: 0
+  5 termos mais relevantes no Documento ID 3:
+    Termo: 'capitu', Relevância: 603.823
+    Termo: 'não', Relevância: 277.129
+    Termo: 'capÍtulo', Relevância: 265.18
+    Termo: 'escobar', Relevância: 197.094
+    Termo: 'ele', Relevância: 165.662
+Documento ID: 4, Relevância: 273.665
+  Termo: 'não'
+    TF: 1501
+    IDF: 0.182322
+    TF-IDF: 273.665
+  Termo: 'há' não encontrado no documento.
+  Termo: 'coisa' não encontrado no documento.
+  Termo: 'melhor'
+    TF: 68
+    IDF: 0
+    TF-IDF: 0
+  5 termos mais relevantes no Documento ID 4:
+    Termo: 'rubião', Relevância: 1247.06
+    Termo: 'sophia', Relevância: 603.823
+    Termo: 'elle', Relevância: 464.713
+    Termo: 'não', Relevância: 273.665
+    Termo: 'ella', Relevância: 236.202
+Documento ID: 1, Relevância: 117.05
+  Termo: 'não'
+    TF: 642
+    IDF: 0.182322
+    TF-IDF: 117.05
+  Termo: 'há' não encontrado no documento.
+  Termo: 'coisa' não encontrado no documento.
+  Termo: 'melhor'
+    TF: 32
+    IDF: 0
+    TF-IDF: 0
+  5 termos mais relevantes no Documento ID 1:
+    Termo: 'guiomar', Relevância: 507.068
+    Termo: 'ella', Relevância: 228.511
+    Termo: 'elle', Relevância: 204.342
+    Termo: 'baroneza', Relevância: 184.567
+    Termo: 'estevão', Relevância: 184.567
+Documento ID: 6, Relevância: 0
+  Termo: 'não' não encontrado no documento.
+  Termo: 'há' não encontrado no documento.
+  Termo: 'coisa' não encontrado no documento.
+  Termo: 'melhor'
+    TF: 1
+    IDF: 0
+    TF-IDF: 0
+  5 termos mais relevantes no Documento ID 6:
+    Termo: 'hum', Relevância: 37.6269
+    Termo: 'naõ', Relevância: 17.9176
+    Termo: 'huma', Relevância: 14.3341
+    Termo: 'valença', Relevância: 12.5423
+    Termo: 'saõ', Relevância: 12.5423
 
+Resumo: A relevância desta pesquisa por documentos ordenados é:
+Documento ID: 2, Relevância: 2526.35
+Documento ID: 5, Relevância: 2263.88
+Documento ID: 3, Relevância: 381.794
+Documento ID: 4, Relevância: 273.665
+Documento ID: 1, Relevância: 117.05
+Documento ID: 6, Relevância: 0
+
+==================================================
+
+==================================================
 Resultados para a pesquisa: "deus é bom"
 Documento ID: 2, Relevância: 1521.11
   Termo: 'deus'
@@ -161,120 +748,18 @@ Documento ID: 6, Relevância: 0
     Termo: 'valença', Relevância: 12.5423
     Termo: 'saõ', Relevância: 12.5423
 
-Resultados para a pesquisa: "a vida é linda"
-Documento ID: 5, Relevância: 679.695
-  Termo: 'vida'
-    TF: 265
-    IDF: 0
-    TF-IDF: 0
-  Termo: 'é'
-    TF: 3720
-    IDF: 0.182322
-    TF-IDF: 678.236
-  Termo: 'linda'
-    TF: 8
-    IDF: 0.182322
-    TF-IDF: 1.45857
-  5 termos mais relevantes no Documento ID 5:
-    Termo: '—', Relevância: 1987.06
-    Termo: 'não', Relevância: 1000.76
-    Termo: 'há', Relevância: 845.64
-    Termo: 'é', Relevância: 678.236
-    Termo: 'coisa', Relevância: 417.473
-Documento ID: 2, Relevância: 677.325
-  Termo: 'vida'
-    TF: 548
-    IDF: 0
-    TF-IDF: 0
-  Termo: 'é'
-    TF: 3714
-    IDF: 0.182322
-    TF-IDF: 677.142
-  Termo: 'linda'
-    TF: 1
-    IDF: 0.182322
-    TF-IDF: 0.182322
-  5 termos mais relevantes no Documento ID 2:
-    Termo: 'ele', Relevância: 2672.08
-    Termo: '9', Relevância: 2098.15
-    Termo: '10', Relevância: 2067.69
-    Termo: '12', Relevância: 1983.48
-    Termo: '13', Relevância: 1935.1
-Documento ID: 3, Relevância: 119.968
-  Termo: 'vida'
-    TF: 85
-    IDF: 0
-    TF-IDF: 0
-  Termo: 'é'
-    TF: 657
-    IDF: 0.182322
-    TF-IDF: 119.785
-  Termo: 'linda'
-    TF: 1
-    IDF: 0.182322
-    TF-IDF: 0.182322
-  5 termos mais relevantes no Documento ID 3:
-    Termo: 'capitu', Relevância: 603.823
-    Termo: 'não', Relevância: 277.129
-    Termo: 'capÍtulo', Relevância: 265.18
-    Termo: 'escobar', Relevância: 197.094
-    Termo: 'ele', Relevância: 165.662
-Documento ID: 4, Relevância: 105.747
-  Termo: 'vida'
-    TF: 52
-    IDF: 0
-    TF-IDF: 0
-  Termo: 'é'
-    TF: 573
-    IDF: 0.182322
-    TF-IDF: 104.47
-  Termo: 'linda'
-    TF: 7
-    IDF: 0.182322
-    TF-IDF: 1.27625
-  5 termos mais relevantes no Documento ID 4:
-    Termo: 'rubião', Relevância: 1247.06
-    Termo: 'sophia', Relevância: 603.823
-    Termo: 'elle', Relevância: 464.713
-    Termo: 'não', Relevância: 273.665
-    Termo: 'ella', Relevância: 236.202
-Documento ID: 1, Relevância: 35.1881
-  Termo: 'vida'
-    TF: 43
-    IDF: 0
-    TF-IDF: 0
-  Termo: 'é'
-    TF: 192
-    IDF: 0.182322
-    TF-IDF: 35.0057
-  Termo: 'linda'
-    TF: 1
-    IDF: 0.182322
-    TF-IDF: 0.182322
-  5 termos mais relevantes no Documento ID 1:
-    Termo: 'guiomar', Relevância: 507.068
-    Termo: 'ella', Relevância: 228.511
-    Termo: 'elle', Relevância: 204.342
-    Termo: 'baroneza', Relevância: 184.567
-    Termo: 'estevão', Relevância: 184.567
+Resumo: A relevância desta pesquisa por documentos ordenados é:
+Documento ID: 2, Relevância: 1521.11
+Documento ID: 5, Relevância: 721.264
+Documento ID: 3, Relevância: 138.929
+Documento ID: 4, Relevância: 124.161
+Documento ID: 1, Relevância: 41.5693
 Documento ID: 6, Relevância: 0
-  Termo: 'vida'
-    TF: 1
-    IDF: 0
-    TF-IDF: 0
-  Termo: 'é' não encontrado no documento.
-  Termo: 'linda' não encontrado no documento.
-  5 termos mais relevantes no Documento ID 6:
-    Termo: 'hum', Relevância: 37.6269
-    Termo: 'naõ', Relevância: 17.9176
-    Termo: 'huma', Relevância: 14.3341
-    Termo: 'valença', Relevância: 12.5423
-    Termo: 'saõ', Relevância: 12.5423
 
-10 termos mais relevantes em todos os documentos:
+==================================================
+5 termos mais relevantes em todos os documentos:
+  Termo: 'não', Relevância: 9499.68
   Termo: 'é', Relevância: 3229.28
-  Termo: 'deus', Relevância: 849.618
-  Termo: 'bom', Relevância: 82.774
-  Termo: 'jeová', Relevância: 28.5639
-  Termo: 'linda', Relevância: 3.28179
-  Termo: 'vida', Relevância: 0
+  Termo: 'ele', Relevância: 3177.39
+  Termo: '9', Relevância: 2098.15
+  Termo: '10', Relevância: 2067.69

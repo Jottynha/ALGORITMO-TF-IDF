@@ -271,6 +271,9 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
         quickSort(relevancias, 0, relevancias.size() - 1);
 
         // Salva os resultados da pesquisa no arquivo
+        outputFile << endl;
+        outputFile << "==================================================";
+        outputFile << endl;
         outputFile << "Resultados para a pesquisa: \"" << pesquisaLinha << "\"" << endl;
         for (const auto& docRelevancia : relevancias) {
             int docID = docRelevancia.docID;
@@ -328,6 +331,13 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
             }
         }
         outputFile << endl;
+        outputFile << "RESUMO: A relevância desta pesquisa por documentos ordenados é:" << endl;
+        for (const auto& docRelevancia : relevancias) {
+            outputFile << "Documento ID: " << docRelevancia.docID << ", Relevância: " << docRelevancia.relevancia << endl;
+        }
+        outputFile << endl;
+        outputFile << "==================================================";
+        outputFile << endl;
     }
 
     // Imprimir as 5 palavras mais relevantes de todos os documentos
@@ -341,8 +351,9 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
     }
 
     pesquisaFileStream.close();
-    outputFile.close(); // Fecha o arquivo de saída
+    outputFile.close(); 
 }
+
 
 // Função para executar a pesquisa de termos
 void searchTermInDocuments(const vector<queue<string>>& termQueues) {
