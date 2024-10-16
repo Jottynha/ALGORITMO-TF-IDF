@@ -58,7 +58,7 @@ Neste projeto, foram escolhidas as seguintes estruturas de dados:
 
 - **Árvores**: Estruturas de árvores (como BST ou AVL) poderiam ser consideradas, especialmente para manter a ordem dos termos e permitir buscas eficientes. No entanto, para o propósito específico de armazenamento de termos e cálculo de TF-IDF, as tabelas hash se mostraram mais adequadas devido à simplicidade e rapidez das operações.
 
-## Descrição das Operações Implementadas
+## Operações Implementadas e suas Análises Assintóticas
 
 As principais operações implementadas no sistema incluem:
 
@@ -80,47 +80,52 @@ As principais operações implementadas no sistema incluem:
 
 ---
 
-## Descrição
+## Descrição do Código
 
-O **document_processor.cpp/hpp** é um programa que lê documentos de texto, processa seu conteúdo para extrair termos relevantes, e calcula a relevância de documentos em relação a uma consulta de pesquisa. O processamento inclui a remoção de stopwords, normalização de palavras, e cálculo de métricas de frequência de termos (TF), frequência inversa de documentos (IDF) e TF-IDF.
+Este código é uma implementação de um processador de documentos que realiza a análise de texto para calcular a relevância de documentos com base em consultas de pesquisa. Ele utiliza as técnicas de **Term Frequency (TF)**, **Inverse Document Frequency (IDF)** e **TF-IDF** para classificar documentos de acordo com sua relevância em relação a termos de consulta. Aqui está um resumo das principais funções e sua lógica:
 
-### Estruturas de Dados Utilizadas
+1. **Estruturas de Dados**:
+   - `unordered_set<string> stopWords`: Armazena palavras de parada que são ignoradas durante a análise.
+   - `unordered_map<string, double> idfMap`: Mapa que associa termos com seus valores de IDF.
+   - `vector<unordered_map<string, int>> tfMaps`: Vetor que contém mapas de frequência de termos (TF) para múltiplos documentos.
 
-O programa utiliza as seguintes estruturas de dados:
+2. **Funções de Manipulação de Texto**:
+   - `removePunctuation`: Remove a pontuação de uma palavra.
+   - `toLowerCase`: Converte uma palavra para letras minúsculas.
+   - `loadStopWords`: Carrega palavras de parada de um arquivo para o conjunto `stopWords`.
 
-1. **`unordered_set<string>`**: Usado para armazenar as stopwords, permitindo a busca eficiente e a verificação se uma palavra é uma stopword.
-  
-2. **`queue<string>`**: Usada para armazenar os termos processados de cada documento. As filas permitem uma ordenação simples e o processamento sequencial dos termos.
+3. **Processamento de Documentos**:
+   - `processDocument`: Processa o conteúdo de um documento, removendo pontuação e convertendo palavras para minúsculas. As palavras que não são palavras de parada são adicionadas a uma fila (`queue<string>`).
+   - `readFile`: Lê o conteúdo de um arquivo e retorna como uma string.
 
-3. **`unordered_map<string, int>`**: Utilizado para armazenar a frequência de cada termo (TF) em um documento.
+4. **Cálculo de Frequências**:
+   - `calculateTF`: Calcula a frequência de termos (TF) a partir de uma fila de termos, retornando um mapa onde as chaves são os termos e os valores são suas frequências.
+   - `calculateIDF`: Calcula o IDF para cada termo, baseado na frequência de documentos que contêm esse termo. Retorna um mapa de termos para seus valores de IDF.
 
-4. **`unordered_map<string, double>`**: Usado para armazenar o IDF de cada termo e o TF-IDF resultante.
+5. **Cálculo de TF-IDF**:
+   - `calculateTFIDF`: Combina os mapas de TF e IDF para calcular os valores de TF-IDF, retornando um mapa que relaciona termos com seus valores de TF-IDF.
 
-5. **`vector<unordered_map<string, double>>`**: Uma lista de mapas que armazenam o TF-IDF para todos os documentos, permitindo o acesso eficiente durante as consultas.
+6. **Relevância de Documentos**:
+   - `calcularRelevancia`: Calcula a relevância de um documento em relação a uma consulta, somando os valores de TF-IDF dos termos da consulta que estão presentes no documento.
+   - `calcularEOrdenarRelevancia`: Calcula e ordena a relevância de múltiplos documentos com base em suas pontuações de TF-IDF em relação aos termos de consulta.
 
-6. **`vector<queue<string>>`**: Utilizado para armazenar filas de termos para cada documento processado.
+7. **Ordenação**:
+   - `partition` e `quickSort`: Implementações do algoritmo QuickSort para ordenar a relevância dos documentos de forma decrescente.
 
-## Como Funciona
+8. **Processamento de Múltiplos Documentos**:
+   - `processDocuments`: Lê múltiplos documentos a partir de um vetor de caminhos de arquivos, processando cada um para extrair termos e armazená-los em filas.
 
-O funcionamento do programa pode ser resumido nas seguintes etapas:
+9. **Saída de Resultados**:
+   - `writeTermsToFile`: Escreve os termos normalizados de cada documento em um arquivo de saída.
+   - `searchAndDisplayResults`: Realiza a pesquisa por termos de consulta, calcula a relevância de cada documento e salva os resultados em um arquivo. Para cada consulta, exibe detalhes como TF, IDF, e TF-IDF para os termos, além das cinco palavras mais relevantes de cada documento.
 
-1. **Carregamento de Stopwords**:
-   - As stopwords são carregadas de um arquivo de texto usando a função `loadStopWords`. Elas são armazenadas em um `unordered_set` para acesso rápido durante o processamento.
+## Funcionamento Geral
 
-2. **Processamento de Documentos**:
-   - Cada documento é lido através da função `readFile`, que carrega o conteúdo do arquivo. Em seguida, o conteúdo é processado pela função `processDocument`, que remove pontuação, converte palavras para minúsculas, e filtra stopwords. Os termos resultantes são armazenados em uma `queue`.
-
-3. **Cálculo de Frequências**:
-   - O TF é calculado utilizando a função `calculateTF`, que conta a frequência de cada termo na fila de termos. O IDF é calculado em relação a todos os documentos usando a função `calculateIDF`.
-
-4. **Cálculo de TF-IDF**:
-   - O TF-IDF é calculado combinando os mapas de TF e IDF através da função `calculateTFIDF`.
-
-5. **Pesquisa e Relevância**:
-   - As consultas de pesquisa são processadas, e a relevância de cada documento em relação à consulta é calculada com a função `calcularRelevancia`. Os documentos são ordenados com base em sua relevância usando o algoritmo de **QuickSort**.
-
-6. **Resultados**:
-   - Os resultados da pesquisa são exibidos, mostrando a relevância de cada documento em relação à consulta.
+1. **Inicialização**: As stop words são carregadas de um arquivo.
+2. **Leitura de Documentos**: O código lê os documentos de um conjunto de caminhos fornecidos e processa cada um para normalizar e extrair termos relevantes.
+3. **Cálculo de TF e IDF**: A frequência dos termos é calculada e, em seguida, o IDF é computado para cada termo. O TF-IDF é então calculado para cada documento.
+4. **Relevância**: Quando uma consulta é fornecida, o código calcula a relevância de cada documento com base nos termos da consulta e suas pontuações de TF-IDF.
+5. **Ordenação e Saída**: Os resultados são ordenados e salvos em um arquivo, juntamente com detalhes sobre a frequência dos termos e a relevância dos documentos em relação à consulta.
 
 ---
 
@@ -140,16 +145,61 @@ Ao implementar o algoritmo de ranqueamento de documentos, algumas dificuldades p
 4. **Ordenação de Resultados**: 
    A ordenação dos documentos com base em sua relevância pode ser complexa se não houver uma estrutura de dados adequada. Métodos tradicionais de ordenação, como QuickSort, têm uma complexidade O(n log n), que é aceitável, mas a implementação de uma estrutura de dados como uma árvore binária de busca (BST) ou uma árvore balanceada (como AVL) poderia facilitar a inserção dos documentos de maneira ordenada à medida que são processados. Isso não apenas reduziria o custo de ordenação, mas também permitiria consultas mais rápidas para determinar a relevância de novos documentos à medida que eles são adicionados ao sistema.
 
-### Considerações sobre Estruturas de Dados
+## Considerações sobre Estruturas de Dados
 
 A utilização de estruturas de árvore e grafo poderia melhorar significativamente a eficiência e a escalabilidade do sistema de ranqueamento de documentos. Enquanto as estruturas de dados básicas, como listas e tabelas hash, fornecem uma base funcional, elas apresentam limitações em cenários de grandes volumes de dados e operações complexas. Estruturas mais avançadas permitem não apenas a organização eficiente dos dados, mas também uma implementação mais intuitiva dos algoritmos de busca e ranqueamento, preparando o terreno para a exploração de conceitos mais avançados, como aprendizado de máquina e análise de redes.
 
 ---
 
+## Resumo dos Resultados
+
+Para cada frase de pesquisa, o algoritmo gera um resumo contendo os documentos ordenados por relevância e a frase correspondente. O seguinte exemplo ilustra o formato dos resultados:
+
+```
+Resumo para a frase: "exemplo de frase de busca"
+A relevância desta pesquisa por documentos ordenados é:
+Documento ID: 3, Relevância: 0.785
+Documento ID: 5, Relevância: 0.654
+Documento ID: 1, Relevância: 0.432
+```
+
+Nesse formato, a frase pesquisada é exibida junto com os IDs dos documentos e suas respectivas relevâncias, facilitando a análise da relevância dos documentos para cada consulta. A imagem abaixo mostra as frases selecionadas baseadas nas palavras com maior relevância de cada documento.
+
+<div align="center">
+   
+![Imagem de Entrada](./fig/entrada.png)
+
+</div>
+
+Os resultados obtidos respectivamente desta entrada de frases foi:
+
+<div align="center">
+   
+![Imagem de Saida (1)](./fig/saida1.png)
+
+![Imagem de Saida (2)](./fig/saida2.png)
+
+</div>
+
+Ao aplicar o algoritmo **TF-IDF** a documentos tão distintos como os **livros de Machado de Assis**, a **Bíblia**, e um **livro sobre terremotos**, o resultado reflete as diferenças entre os conteúdos com base na frequência e relevância das palavras em cada contexto.
+
+- **TF (Term Frequency)** mede a frequência de uma palavra em um documento. Em um livro de Machado de Assis, termos literários e filosóficos aparecem frequentemente. Na Bíblia, termos religiosos, como "fé" e "Deus", são muito recorrentes, enquanto em um livro sobre terremotos, termos técnicos como "falha", "placa tectônica" e "sismologia" são dominantes.
+  
+- **IDF (Inverse Document Frequency)** diminui o peso de palavras comuns que aparecem em todos os documentos, como "o", "de", "e". Palavras específicas a cada tipo de texto terão maior peso na relevância. Por exemplo, "ressurreição" terá alta relevância na Bíblia, mas não em um livro científico.
+
+Quando o TF-IDF é aplicado, as palavras que melhor diferenciam os documentos são aquelas mais raras em uma coleção global, mas frequentes em um único texto. Assim, o algoritmo destaca o quão únicos os termos são para cada tipo de documento.
+
 ## Conclusão
 
-O **Document Processor** oferece uma solução eficaz para processar documentos de texto e calcular sua relevância em relação a consultas de pesquisa, utilizando técnicas clássicas de recuperação de informações. As estruturas de dados escolhidas garantem eficiência e rapidez no processamento.
+O desenvolvimento deste projeto, que envolveu a implementação de um código em C++ utilizando as técnicas de TF-IDF e Quick Sort, proporcionou uma experiência enriquecedora no campo da análise textual e recuperação de informações. O objetivo principal foi avaliar a relevância de frases extraídas de textos significativos, como a Bíblia e obras de Machado de Assis, utilizando uma abordagem quantitativa e sistemática.
 
+A técnica de TF-IDF foi essencial para medir a importância relativa de termos em relação a documentos distintos, permitindo que o sistema destacasse palavras-chave e frases que possuíam maior relevância para o contexto dos textos analisados. Essa métrica se mostrou particularmente eficaz em identificar as nuances presentes nas obras literárias, contribuindo para uma compreensão mais profunda das intenções dos autores e dos temas abordados.
+
+Além disso, a utilização do algoritmo Quick Sort permitiu uma ordenação eficiente das frases com base nas suas pontuações de relevância, facilitando a apresentação dos resultados de forma clara e acessível. A combinação dessa técnica com estruturas de dados, como tabelas hash e listas, otimizou o armazenamento e a recuperação de palavras e termos, garantindo uma manipulação ágil e eficaz dos dados durante todo o processo.
+
+Os resultados obtidos evidenciaram a capacidade do sistema em identificar frases relevantes de maneira precisa e rápida, destacando a importância das escolhas estruturais e algorítmicas no sucesso do projeto. O uso de tabelas hash proporcionou um acesso eficiente às informações, enquanto as listas possibilitaram uma organização flexível dos dados analisados.
+
+Este trabalho não apenas demonstrou a aplicação prática de conceitos de ciência da computação, como análise de dados e algoritmos de ordenação, mas também destacou a relevância da literatura na formação de um repertório cultural mais rico. A integração de métodos computacionais com textos clássicos ilustra o potencial da tecnologia na exploração e apreciação da literatura, abrindo portas para futuras pesquisas e aplicações na área de processamento de linguagem natural.
 
 ---
  
@@ -166,7 +216,6 @@ O **Document Processor** oferece uma solução eficaz para processar documentos 
   |  `make run`            | Executa o programa da pasta build após a realização da compilação.                                |
 
 ---
-Esse README oferece uma visão geral da evolução do algoritmo, as bibliotecas utilizadas e o código relevante, proporcionando uma base clara para entender e utilizar o projeto.
 
 ## Integrantes:
 
