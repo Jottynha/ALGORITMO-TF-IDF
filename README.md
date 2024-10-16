@@ -44,7 +44,7 @@ Esses objetivos visam não apenas o cumprimento das exigências do trabalho, mas
   
 ---
 
-## Estruturas de Dados Escolhidas
+## Estruturas de Dados Escolhidas 🛠️
 
 Neste projeto, foram escolhidas as seguintes estruturas de dados:
 
@@ -58,7 +58,7 @@ Neste projeto, foram escolhidas as seguintes estruturas de dados:
 
 - **Árvores**: Estruturas de árvores (como BST ou AVL) poderiam ser consideradas, especialmente para manter a ordem dos termos e permitir buscas eficientes. No entanto, para o propósito específico de armazenamento de termos e cálculo de TF-IDF, as tabelas hash se mostraram mais adequadas devido à simplicidade e rapidez das operações.
 
-## Operações Implementadas e suas Análises Assintóticas
+## Operações Implementadas e suas Análises Assintóticas 📈
 
 As principais operações implementadas no sistema incluem:
 
@@ -80,7 +80,7 @@ As principais operações implementadas no sistema incluem:
 
 ---
 
-## Descrição do Código
+## Descrição do Código 📖 
 
 Este código é uma implementação de um processador de documentos que realiza a análise de texto para calcular a relevância de documentos com base em consultas de pesquisa. Ele utiliza as técnicas de **Term Frequency (TF)**, **Inverse Document Frequency (IDF)** e **TF-IDF** para classificar documentos de acordo com sua relevância em relação a termos de consulta. Aqui está um resumo das principais funções e sua lógica:
 
@@ -119,7 +119,7 @@ Este código é uma implementação de um processador de documentos que realiza 
    - `writeTermsToFile`: Escreve os termos normalizados de cada documento em um arquivo de saída.
    - `searchAndDisplayResults`: Realiza a pesquisa por termos de consulta, calcula a relevância de cada documento e salva os resultados em um arquivo. Para cada consulta, exibe detalhes como TF, IDF, e TF-IDF para os termos, além das cinco palavras mais relevantes de cada documento.
 
-## Funcionamento Geral
+### Funcionamento Geral 
 
 1. **Inicialização**: As stop words são carregadas de um arquivo.
 2. **Leitura de Documentos**: O código lê os documentos de um conjunto de caminhos fornecidos e processa cada um para normalizar e extrair termos relevantes.
@@ -141,7 +141,7 @@ Segue abaixo imagens do arquivo `document_processor.hpp` e `main.cpp`:
 
 ---
 
-## Dificuldades de Implementação
+## Dificuldades de Implementação 🔍
 
 Ao implementar o algoritmo de ranqueamento de documentos, algumas dificuldades podem ser encontradas:
 
@@ -157,13 +157,13 @@ Ao implementar o algoritmo de ranqueamento de documentos, algumas dificuldades p
 4. **Ordenação de Resultados**: 
    A ordenação dos documentos com base em sua relevância pode ser complexa se não houver uma estrutura de dados adequada. Métodos tradicionais de ordenação, como QuickSort, têm uma complexidade O(n log n), que é aceitável, mas a implementação de uma estrutura de dados como uma árvore binária de busca (BST) ou uma árvore balanceada (como AVL) poderia facilitar a inserção dos documentos de maneira ordenada à medida que são processados. Isso não apenas reduziria o custo de ordenação, mas também permitiria consultas mais rápidas para determinar a relevância de novos documentos à medida que eles são adicionados ao sistema.
 
-## Considerações sobre Estruturas de Dados
+### Considerações sobre Estruturas de Dados
 
 A utilização de estruturas de árvore e grafo poderia melhorar significativamente a eficiência e a escalabilidade do sistema de ranqueamento de documentos. Enquanto as estruturas de dados básicas, como listas e tabelas hash, fornecem uma base funcional, elas apresentam limitações em cenários de grandes volumes de dados e operações complexas. Estruturas mais avançadas permitem não apenas a organização eficiente dos dados, mas também uma implementação mais intuitiva dos algoritmos de busca e ranqueamento, preparando o terreno para a exploração de conceitos mais avançados, como aprendizado de máquina e análise de redes.
 
 ---
 
-## Resumo dos Resultados
+## Resumo dos Resultados 📊 
 
 Para cada frase de pesquisa, o algoritmo gera um resumo contendo os documentos ordenados por relevância e a frase correspondente. O seguinte exemplo ilustra o formato dos resultados:
 
@@ -201,7 +201,7 @@ Ao aplicar o algoritmo **TF-IDF** a documentos tão distintos como os **livros d
 
 Quando o TF-IDF é aplicado, as palavras que melhor diferenciam os documentos são aquelas mais raras em uma coleção global, mas frequentes em um único texto. Assim, o algoritmo destaca o quão únicos os termos são para cada tipo de documento.
 
-## Conclusão
+## Conclusão ✅
 
 O desenvolvimento deste projeto, que envolveu a implementação de um código em C++ utilizando as técnicas de TF-IDF e Quick Sort, proporcionou uma experiência enriquecedora no campo da análise textual e recuperação de informações. O objetivo principal foi avaliar a relevância de frases extraídas de textos significativos, como a Bíblia e obras de Machado de Assis, utilizando uma abordagem quantitativa e sistemática.
 
