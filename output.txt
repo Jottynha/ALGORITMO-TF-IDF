@@ -128,14 +128,6 @@ Documento ID: 6, Relevância: 0
     Termo: 'valença', Relevância: 12.5423
     Termo: 'saõ', Relevância: 12.5423
 
-Resumo: A relevância desta pesquisa por documentos ordenados é:
-Documento ID: 2, Relevância: 1010.07
-Documento ID: 5, Relevância: 785.441
-Documento ID: 1, Relevância: 739.221
-Documento ID: 4, Relevância: 142.758
-Documento ID: 3, Relevância: 138.2
-Documento ID: 6, Relevância: 0
-
 ==================================================
 
 ==================================================
@@ -261,14 +253,6 @@ Documento ID: 6, Relevância: 0
     Termo: 'valença', Relevância: 12.5423
     Termo: 'saõ', Relevância: 12.5423
 
-Resumo: A relevância desta pesquisa por documentos ordenados é:
-Documento ID: 2, Relevância: 6847.4
-Documento ID: 5, Relevância: 355.686
-Documento ID: 3, Relevância: 169.491
-Documento ID: 4, Relevância: 6.19893
-Documento ID: 1, Relevância: 0.911608
-Documento ID: 6, Relevância: 0
-
 ==================================================
 
 ==================================================
@@ -375,14 +359,6 @@ Documento ID: 6, Relevância: 0
     Termo: 'huma', Relevância: 14.3341
     Termo: 'valença', Relevância: 12.5423
     Termo: 'saõ', Relevância: 12.5423
-
-Resumo: A relevância desta pesquisa por documentos ordenados é:
-Documento ID: 2, Relevância: 1497.95
-Documento ID: 5, Relevância: 1000.76
-Documento ID: 3, Relevância: 880.952
-Documento ID: 4, Relevância: 273.665
-Documento ID: 1, Relevância: 117.05
-Documento ID: 6, Relevância: 0
 
 ==================================================
 
@@ -503,14 +479,6 @@ Documento ID: 6, Relevância: 0
     Termo: 'valença', Relevância: 12.5423
     Termo: 'saõ', Relevância: 12.5423
 
-Resumo: A relevância desta pesquisa por documentos ordenados é:
-Documento ID: 4, Relevância: 2135.67
-Documento ID: 2, Relevância: 1699.6
-Documento ID: 5, Relevância: 1140.85
-Documento ID: 3, Relevância: 291.355
-Documento ID: 1, Relevância: 121.608
-Documento ID: 6, Relevância: 0
-
 ==================================================
 
 ==================================================
@@ -630,14 +598,6 @@ Documento ID: 6, Relevância: 0
     Termo: 'valença', Relevância: 12.5423
     Termo: 'saõ', Relevância: 12.5423
 
-Resumo: A relevância desta pesquisa por documentos ordenados é:
-Documento ID: 2, Relevância: 2526.35
-Documento ID: 5, Relevância: 2263.88
-Documento ID: 3, Relevância: 381.794
-Documento ID: 4, Relevância: 273.665
-Documento ID: 1, Relevância: 117.05
-Documento ID: 6, Relevância: 0
-
 ==================================================
 
 ==================================================
@@ -747,14 +707,6 @@ Documento ID: 6, Relevância: 0
     Termo: 'huma', Relevância: 14.3341
     Termo: 'valença', Relevância: 12.5423
     Termo: 'saõ', Relevância: 12.5423
-
-Resumo: A relevância desta pesquisa por documentos ordenados é:
-Documento ID: 2, Relevância: 1521.11
-Documento ID: 5, Relevância: 721.264
-Documento ID: 3, Relevância: 138.929
-Documento ID: 4, Relevância: 124.161
-Documento ID: 1, Relevância: 41.5693
-Documento ID: 6, Relevância: 0
 
 ==================================================
 5 termos mais relevantes em todos os documentos:

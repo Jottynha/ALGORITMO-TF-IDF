@@ -292,8 +292,6 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
                 // Adiciona TF-IDF globalmente
                 if (tfidfMap.find(term) != tfidfMap.end()) {
                     double tfidf = tfidfMap.at(term);
-                    cout << "TF-IDF para o termo '" << term << "' no Documento ID: " << docID << " é: " << tfidf << endl;
-                    
                     // Adiciona a relevância ao total
                     relevanciasGlobais[term] += tfidf;
                 }
@@ -331,11 +329,11 @@ void searchAndDisplayResults(const vector<unordered_map<string, double>>& tfidfM
             }
         }
         outputFile << endl;
-        outputFile << "RESUMO: A relevância desta pesquisa por documentos ordenados é:" << endl;
+        cout << "Resumo para a frase: \"" << pesquisaLinha << "\"" << endl;
+        cout << "A relevância desta pesquisa por documentos ordenados é:" << endl;
         for (const auto& docRelevancia : relevancias) {
-            outputFile << "Documento ID: " << docRelevancia.docID << ", Relevância: " << docRelevancia.relevancia << endl;
+            cout << "Documento ID: " << docRelevancia.docID << ", Relevância: " << docRelevancia.relevancia << endl;
         }
-        outputFile << endl;
         outputFile << "==================================================";
         outputFile << endl;
     }
