@@ -89,33 +89,38 @@ Este código é uma implementação de um processador de documentos que realiza 
    - `unordered_map<string, double> idfMap`: Mapa que associa termos com seus valores de IDF.
    - `vector<unordered_map<string, int>> tfMaps`: Vetor que contém mapas de frequência de termos (TF) para múltiplos documentos.
 
-2. **Funções de Manipulação de Texto**:
+2.**Estrutura dos Arquivos**:
+   - `pesquisa.txt`: Arquivo para depositar as frases selecionadas para pesquisa de relevância dentre os arquivos.
+   - `output.txt`: Arquivo com análise detalhada termo a termo das frases selecionadas, incluindo valor TF-IDF, termos mais relevantes por documento.
+   - `words.txt`: Arquivos que contém as palavras tratadas após o início da execução do programa.
+
+3. **Funções de Manipulação de Texto**:
    - `removePunctuation`: Remove a pontuação de uma palavra.
    - `toLowerCase`: Converte uma palavra para letras minúsculas.
    - `loadStopWords`: Carrega palavras de parada de um arquivo para o conjunto `stopWords`.
 
-3. **Processamento de Documentos**:
+4. **Processamento de Documentos**:
    - `processDocument`: Processa o conteúdo de um documento, removendo pontuação e convertendo palavras para minúsculas. As palavras que não são palavras de parada são adicionadas a uma fila (`queue<string>`).
    - `readFile`: Lê o conteúdo de um arquivo e retorna como uma string.
 
-4. **Cálculo de Frequências**:
+5. **Cálculo de Frequências**:
    - `calculateTF`: Calcula a frequência de termos (TF) a partir de uma fila de termos, retornando um mapa onde as chaves são os termos e os valores são suas frequências.
    - `calculateIDF`: Calcula o IDF para cada termo, baseado na frequência de documentos que contêm esse termo. Retorna um mapa de termos para seus valores de IDF.
 
-5. **Cálculo de TF-IDF**:
+6. **Cálculo de TF-IDF**:
    - `calculateTFIDF`: Combina os mapas de TF e IDF para calcular os valores de TF-IDF, retornando um mapa que relaciona termos com seus valores de TF-IDF.
 
-6. **Relevância de Documentos**:
+7. **Relevância de Documentos**:
    - `calcularRelevancia`: Calcula a relevância de um documento em relação a uma consulta, somando os valores de TF-IDF dos termos da consulta que estão presentes no documento.
    - `calcularEOrdenarRelevancia`: Calcula e ordena a relevância de múltiplos documentos com base em suas pontuações de TF-IDF em relação aos termos de consulta.
 
-7. **Ordenação**:
+8. **Ordenação**:
    - `partition` e `quickSort`: Implementações do algoritmo QuickSort para ordenar a relevância dos documentos de forma decrescente.
 
-8. **Processamento de Múltiplos Documentos**:
+9. **Processamento de Múltiplos Documentos**:
    - `processDocuments`: Lê múltiplos documentos a partir de um vetor de caminhos de arquivos, processando cada um para extrair termos e armazená-los em filas.
 
-9. **Saída de Resultados**:
+10. **Saída de Resultados**:
    - `writeTermsToFile`: Escreve os termos normalizados de cada documento em um arquivo de saída.
    - `searchAndDisplayResults`: Realiza a pesquisa por termos de consulta, calcula a relevância de cada documento e salva os resultados em um arquivo. Para cada consulta, exibe detalhes como TF, IDF, e TF-IDF para os termos, além das cinco palavras mais relevantes de cada documento.
 
@@ -165,7 +170,7 @@ A utilização de estruturas de árvore e grafo poderia melhorar significativame
 
 ## Resumo dos Resultados 📊 
 
-Para cada frase de pesquisa, o algoritmo gera um resumo contendo os documentos ordenados por relevância e a frase correspondente. O seguinte exemplo ilustra o formato dos resultados:
+Para cada frase de pesquisa, o algoritmo gera um resumo contendo os documentos ordenados por relevância e a frase correspondente. O seguinte exemplo ilustra o formato dos resultados presentes no terminal:
 
 ```
 Resumo para a frase: "exemplo de frase de busca"
@@ -192,6 +197,8 @@ Os resultados obtidos respectivamente desta entrada de frases foi:
 ![Imagem de Saida (2)](./fig/saida2.png)
 
 </div>
+
+Caso deseje visualizar uma análise mais profunda sobre todos os termos constituintes das frases selecionadas no arquivo de **"pesquisa.txt"** basta abrir o arquivo **output.txt** que possui não só os termos mais relevantes de cada documento dentre os datasets, como também o valor **TF-IDF** para cada termo presente na frase. Além de no fim também possuir os termos mais relevantes levando em conta todos os arquivos.
 
 Ao aplicar o algoritmo **TF-IDF** a documentos tão distintos como os **livros de Machado de Assis**, a **Bíblia**, e um **livro sobre terremotos**, o resultado reflete as diferenças entre os conteúdos com base na frequência e relevância das palavras em cada contexto.
 
