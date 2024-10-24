@@ -84,16 +84,19 @@ As principais operações implementadas no sistema incluem:
 
 Este código é uma implementação de um processador de documentos que realiza a análise de texto para calcular a relevância de documentos com base em consultas de pesquisa. Ele utiliza as técnicas de **Term Frequency (TF)**, **Inverse Document Frequency (IDF)** e **TF-IDF** para classificar documentos de acordo com sua relevância em relação a termos de consulta. Aqui está um resumo das principais funções e sua lógica:
 
-1. **Estruturas de Dados**:
-   - `unordered_set<string> stopWords`: Armazena palavras de parada que são ignoradas durante a análise.
-   - `unordered_map<string, double> idfMap`: Mapa que associa termos com seus valores de IDF.
-   - `vector<unordered_map<string, int>> tfMaps`: Vetor que contém mapas de frequência de termos (TF) para múltiplos documentos.
-
-2.**Estrutura dos Arquivos**:
+1. **Estrutura dos Arquivos**:
    - `pesquisa.txt`: Arquivo para depositar as frases selecionadas para pesquisa de relevância dentre os arquivos.
    - `output.txt`: Arquivo com análise detalhada termo a termo das frases selecionadas, incluindo valor TF-IDF, termos mais relevantes por documento.
    - `words.txt`: Arquivos que contém as palavras tratadas após o início da execução do programa.
-
+   - `src/document_processor.hpp`: Arquivo cabeçalho para as funções que serão utilizadas durante a execução do programa.
+   - `src/document_processor.cpp`: Arquivo que contém as declarações das funções especificadas no arquivo anterior.
+   - `src/main.cpp`: Arquivo principal do programa, onde as funções serão executadas na ordem desejada para análise dos dados.
+   - `datasets/`: Pasta que contém os arquivos de textos selecionados, dentre eles, livros do Machado de Assis, a Bíblia Sagrada e outros textos diversos.
+   - `fig/`: Pasta que contém as figuras utilizadas neste README.
+2. **Estruturas de Dados**:
+   - `unordered_set<string> stopWords`: Armazena palavras de parada que são ignoradas durante a análise.
+   - `unordered_map<string, double> idfMap`: Mapa que associa termos com seus valores de IDF.
+   - `vector<unordered_map<string, int>> tfMaps`: Vetor que contém mapas de frequência de termos (TF) para múltiplos documentos.
 3. **Funções de Manipulação de Texto**:
    - `removePunctuation`: Remove a pontuação de uma palavra.
    - `toLowerCase`: Converte uma palavra para letras minúsculas.
